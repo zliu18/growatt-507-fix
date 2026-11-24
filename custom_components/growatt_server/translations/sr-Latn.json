@@ -1,0 +1,872 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ure\u0111aj je ve\u0107 pode\u0161en",
+            "cannot_connect": "Povezivanje nije uspelo",
+            "no_plants": "Na ovom nalogu nisu prona\u0111ene biljke"
+        },
+        "error": {
+            "cannot_connect": "Nije mogu\u0107e povezivanje sa Growatt serverima. Proverite va\u0161u internet vezu i poku\u0161ajte ponovo.",
+            "invalid_auth": "Prijava nije uspela. Proverite va\u0161e pristupne podatke i poku\u0161ajte ponovo."
+        },
+        "step": {
+            "password_auth": {
+                "data": {
+                    "password": "Lozinka",
+                    "region": "Region servera",
+                    "username": "Korisni\u010dko ime"
+                },
+                "data_description": {
+                    "password": "Lozinka za va\u0161 Growatt nalog.",
+                    "region": "Region servera koja odgovara lokaciji va\u0161eg Growatt naloga.",
+                    "username": "Adresa e\u2011po\u0161te ili korisni\u010dko ime za va\u0161 Growatt nalog."
+                },
+                "title": "Unos Growatt pristupnih podataka"
+            },
+            "plant": {
+                "data": {
+                    "plant_id": "Biljke"
+                },
+                "data_description": {
+                    "plant_id": "Growatt postrojenje (solarna instalacija) za integraciju."
+                },
+                "title": "Izbor solarnog postrojenja"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Lozinka",
+                    "region": "Region servera",
+                    "token": "API token",
+                    "username": "Korisni\u010dko ime"
+                },
+                "data_description": {
+                    "password": "Lozinka za va\u0161 Growatt nalog.",
+                    "region": "Region servera koja odgovara lokaciji va\u0161eg Growatt naloga.",
+                    "token": "API token za va\u0161 Growatt nalog. Mo\u017eete ga generisati putem Growatt veb portala ili aplikacije ShinePhone.",
+                    "username": "Adresa e\u2011po\u0161te ili korisni\u010dko ime za va\u0161 Growatt nalog."
+                },
+                "description": "Ponovo unesite va\u0161e pristupne podatke kako biste nastavili sa kori\u0161\u0107enjem ove integracije.",
+                "title": "Ponovna prijava na Growatt"
+            },
+            "reconfigure": {
+                "data": {
+                    "password": "Lozinka",
+                    "region": "Region servera",
+                    "token": "API token",
+                    "username": "Korisni\u010dko ime"
+                },
+                "data_description": {
+                    "password": "Lozinka za va\u0161 Growatt nalog.",
+                    "region": "Region servera koja odgovara lokaciji va\u0161eg Growatt naloga.",
+                    "token": "API token za va\u0161 Growatt nalog. Mo\u017eete ga generisati putem Growatt veb portala ili aplikacije ShinePhone.",
+                    "username": "Adresa e\u2011po\u0161te ili korisni\u010dko ime za va\u0161 Growatt nalog."
+                },
+                "description": "A\u017eurirajte svoje prijavne podatke da biste nastavili da koristite ovu integraciju.",
+                "title": "Ponovno pode\u0161avanje Growatt integracije"
+            },
+            "token_auth": {
+                "data": {
+                    "region": "Region servera",
+                    "token": "API token"
+                },
+                "data_description": {
+                    "region": "Region servera koja odgovara lokaciji va\u0161eg Growatt naloga.",
+                    "token": "API token za va\u0161 Growatt nalog. Mo\u017eete ga generisati putem Growatt veb portala ili aplikacije ShinePhone."
+                },
+                "description": "Prijava putem tokena podr\u017eana je samo za MIN/SPH ure\u0111aje. Za ostale tipove ure\u0111aja koristite korisni\u010dko ime i lozinku.",
+                "title": "Unos API tokena"
+            },
+            "user": {
+                "description": "Napomena: Prijava putem tokena trenutno je podr\u017eana samo za MIN/SPH ure\u0111aje. Za ostale tipove ure\u0111aja koristite korisni\u010dko ime i lozinku.",
+                "menu_options": {
+                    "password_auth": "Korisni\u010dko ime / lozinka",
+                    "token_auth": "API token (samo za MIN/SPH)"
+                },
+                "title": "Izbor na\u010dina prijave"
+            }
+        }
+    },
+    "entity": {
+        "number": {
+            "battery_charge_power_limit": {
+                "name": "Limit snage pri pra\u017enjenju baterije"
+            },
+            "battery_charge_soc_limit": {
+                "name": "Donja granica napunjenosti pri pra\u017enjenju"
+            },
+            "battery_discharge_power_limit": {
+                "name": "Limit snage pri pra\u017enjenju baterije"
+            },
+            "battery_discharge_soc_limit_off_grid": {
+                "name": "Granica SOC pra\u017enjenja baterije (van mre\u017ee)"
+            },
+            "battery_discharge_soc_limit_on_grid": {
+                "name": "Granica SOC pra\u017enjenja baterije (na mre\u017ei)"
+            }
+        },
+        "sensor": {
+            "inverter_amperage_input_1": {
+                "name": "Struja ulaza 1"
+            },
+            "inverter_amperage_input_2": {
+                "name": "Struja ulaza 2"
+            },
+            "inverter_amperage_input_3": {
+                "name": "Struja ulaza 3"
+            },
+            "inverter_current_reactive_wattage": {
+                "name": "Reaktivna snaga"
+            },
+            "inverter_current_wattage": {
+                "name": "Izlazna snaga"
+            },
+            "inverter_energy_today": {
+                "name": "Energy today"
+            },
+            "inverter_energy_total": {
+                "name": "Ukupna proizvedena energija veka trajanja"
+            },
+            "inverter_frequency": {
+                "name": "Frekvencija naizmeni\u010dne struje"
+            },
+            "inverter_internal_wattage": {
+                "name": "Unutra\u0161nja snaga (u vatima)"
+            },
+            "inverter_ipm_temperature": {
+                "name": "Temperatura inteligentnog upravljanja energijom"
+            },
+            "inverter_reactive_amperage": {
+                "name": "Reaktivna struja"
+            },
+            "inverter_reactive_voltage": {
+                "name": "Reaktivni napon"
+            },
+            "inverter_temperature": {
+                "name": "Temperatura invertera"
+            },
+            "inverter_voltage_input_1": {
+                "name": "Napon ulaza 1"
+            },
+            "inverter_voltage_input_2": {
+                "name": "Napon ulaza 2"
+            },
+            "inverter_voltage_input_3": {
+                "name": "Napon ulaza 3"
+            },
+            "inverter_wattage_input_1": {
+                "name": "Snaga ulaza 1"
+            },
+            "inverter_wattage_input_2": {
+                "name": "Snaga ulaza 2"
+            },
+            "inverter_wattage_input_3": {
+                "name": "Snaga ulaza 3"
+            },
+            "mix_battery_charge": {
+                "name": "Punjenje baterije"
+            },
+            "mix_battery_charge_lifetime": {
+                "name": "Ukupna energija napunjena u bateriju tokom veka trajanja"
+            },
+            "mix_battery_charge_today": {
+                "name": "Baterija napunjena danas"
+            },
+            "mix_battery_discharge_kw": {
+                "name": "Pra\u017enjenje baterije (kW)"
+            },
+            "mix_battery_discharge_lifetime": {
+                "name": "Ukupna energija ispra\u017enjena iz baterije tokom veka trajanja"
+            },
+            "mix_battery_discharge_today": {
+                "name": "Pra\u017enjenje baterije danas"
+            },
+            "mix_battery_discharge_w": {
+                "name": "Pra\u017enjenje baterije (W)"
+            },
+            "mix_battery_voltage": {
+                "name": "Napon bateije"
+            },
+            "mix_export_to_grid": {
+                "name": "Predato mre\u017ei"
+            },
+            "mix_export_to_grid_lifetime": {
+                "name": "Ukupna energija predata mre\u017ei tokom veka trajanja"
+            },
+            "mix_export_to_grid_today": {
+                "name": "Predato mre\u017ei danas"
+            },
+            "mix_grid_voltage": {
+                "name": "Mre\u017eni napon"
+            },
+            "mix_import_from_grid": {
+                "name": "Uvoz iz mre\u017ee"
+            },
+            "mix_import_from_grid_today": {
+                "name": "Preuzeto iz mre\u017ee danas (optere\u0107enje)"
+            },
+            "mix_import_from_grid_today_combined": {
+                "name": "Preuzeto iz mre\u017ee danas (optere\u0107enje + punjenje)"
+            },
+            "mix_last_update": {
+                "name": "Poslednje a\u017euriranje podataka"
+            },
+            "mix_load_consumption": {
+                "name": "Potro\u0161nja optere\u0107enja"
+            },
+            "mix_load_consumption_battery_today": {
+                "name": "Potro\u0161nja optere\u0107enja danas (baterija)"
+            },
+            "mix_load_consumption_lifetime": {
+                "name": "Ukupna potro\u0161nja objekta tokom veka trajanja"
+            },
+            "mix_load_consumption_solar_today": {
+                "name": "Potro\u0161nja optere\u0107enja danas (solar)"
+            },
+            "mix_load_consumption_today": {
+                "name": "Potro\u0161nja optere\u0107enja danas"
+            },
+            "mix_load_consumption_total": {
+                "name": "Ukupna sveobuhvatna potro\u0161nja objekta tokom veka trajanja"
+            },
+            "mix_pv1_voltage": {
+                "name": "Napon PV1"
+            },
+            "mix_pv2_voltage": {
+                "name": "Napon PV2"
+            },
+            "mix_self_consumption_today": {
+                "name": "Dana\u0161nja sopstvena potro\u0161nja (solari + baterija)"
+            },
+            "mix_solar_generation_lifetime": {
+                "name": "Ukupna solarna energija tokom veka trajanja"
+            },
+            "mix_solar_generation_today": {
+                "name": "Solarna energija danas"
+            },
+            "mix_statement_of_charge": {
+                "name": "Nivo napunjenosti"
+            },
+            "mix_system_production_today": {
+                "name": "Proizvodnja sistema danas (sopstvena potro\u0161nja + izvoz)"
+            },
+            "mix_wattage_pv_1": {
+                "name": "Snaga prvog fotonaponskog ulaza"
+            },
+            "mix_wattage_pv_2": {
+                "name": "Snaga drugog fotonaponskog ulaza"
+            },
+            "mix_wattage_pv_all": {
+                "name": "Ukupna snaga fotonaponskih panela"
+            },
+            "sph_grid_frequency": {
+                "name": "Frekvencija AC struje"
+            },
+            "sph_temperature_1": {
+                "name": "Temperatura 1"
+            },
+            "sph_temperature_2": {
+                "name": "Temperatura 2"
+            },
+            "sph_temperature_3": {
+                "name": "Temperatura 3"
+            },
+            "sph_temperature_4": {
+                "name": "Temperatura 4"
+            },
+            "sph_temperature_5": {
+                "name": "Temperatura 5"
+            },
+            "storage_ac_input_frequency_out": {
+                "name": "Frekvencija AC ulaza"
+            },
+            "storage_ac_output_frequency": {
+                "name": "Izlazna frekvencija naizmeni\u010dne struje"
+            },
+            "storage_battery_percentage": {
+                "name": "Procenat baterije"
+            },
+            "storage_battery_voltage": {
+                "name": "Napon bateije"
+            },
+            "storage_charge_storage_lifetime": {
+                "name": "Ukupna energija uskladi\u0161tena tokom veka trajanja"
+            },
+            "storage_charge_today": {
+                "name": "Danas napunjeno"
+            },
+            "storage_current_1": {
+                "name": "Struja sa prvoj fotonaponskog ulaza ka skladi\u0161tu"
+            },
+            "storage_current_2": {
+                "name": "Struja sa drugog fotonaponskog ulaza ka skladi\u0161tu"
+            },
+            "storage_current_pv": {
+                "name": "Solar charge current"
+            },
+            "storage_grid_amperage_input": {
+                "name": "Danas predato u mre\u017eu"
+            },
+            "storage_grid_charged_lifetime": {
+                "name": "Ukupna energija povu\u010dena iz mre\u017ee tokom veka trajanja"
+            },
+            "storage_grid_charged_today": {
+                "name": "Danas preuzeto iz mre\u017ee"
+            },
+            "storage_grid_discharge_lifetime": {
+                "name": "Ukupna energija predata mre\u017ei tokom veka trajanja"
+            },
+            "storage_grid_discharge_today": {
+                "name": "Danas preuzeto iz mre\u017ee"
+            },
+            "storage_grid_out_current": {
+                "name": "Izlazna struja ka mre\u017ei"
+            },
+            "storage_grid_voltage": {
+                "name": "AC ulazni napon"
+            },
+            "storage_import_from_grid": {
+                "name": "Uvoz iz mre\u017ee"
+            },
+            "storage_import_from_grid_today": {
+                "name": "Preuzeto iz mre\u017ee danas"
+            },
+            "storage_import_from_grid_total": {
+                "name": "Ukupno preuzeto iz mre\u017ee"
+            },
+            "storage_load_consumption": {
+                "name": "Potro\u0161nja optere\u0107enja"
+            },
+            "storage_load_consumption_lifetime": {
+                "name": "Ukupna potro\u0161nja objekta tokom veka trajanja"
+            },
+            "storage_load_consumption_solar_storage": {
+                "name": "Potro\u0161nja optere\u0107enja (solari + skladi\u0161tenje)"
+            },
+            "storage_load_consumption_today": {
+                "name": "Potro\u0161nja optere\u0107enja danas"
+            },
+            "storage_load_percentage": {
+                "name": "Procenat optere\u0107enja"
+            },
+            "storage_output_voltage": {
+                "name": "Izlazni napon"
+            },
+            "storage_power_flow": {
+                "name": "Punjenje / pra\u017enjenje(-ve) skladi\u0161ta"
+            },
+            "storage_pv_charging_voltage": {
+                "name": "Napon punjenja prvog fotonaponskog ulaza"
+            },
+            "storage_pv_charging_voltage_2": {
+                "name": "Napon punjenja drugog fotonaponskog ulaza"
+            },
+            "storage_solar_output_lifetime": {
+                "name": "Ukupna proizvodnja solarne energije tokom veka trajanja"
+            },
+            "storage_solar_output_today": {
+                "name": "Dana\u0161nja solarna proizvodnja"
+            },
+            "storage_solar_production": {
+                "name": "Proizvodnja solarne energije (PV1)"
+            },
+            "storage_solar_production_2": {
+                "name": "Proizvodnja solarne energije (PV2)"
+            },
+            "storage_storage_production_lifetime": {
+                "name": "Ukupna energija isporu\u010dena iz skladi\u0161ta tokom veka trajanja"
+            },
+            "storage_storage_production_today": {
+                "name": "Dana\u0161nja proizvodnja iz skladi\u0161ta"
+            },
+            "tlx_all_batteries_charge_today": {
+                "name": "Sve baterije su se napunile danas"
+            },
+            "tlx_all_batteries_charge_total": {
+                "name": "Ukupno punjenje svih baterija  tokom veka trajanja"
+            },
+            "tlx_all_batteries_discharge_today": {
+                "name": "Sve baterije su se ispraznile danas"
+            },
+            "tlx_all_batteries_discharge_total": {
+                "name": "Ukupno pra\u017enjenje svih baterija  tokom veka trajanja"
+            },
+            "tlx_amperage_input_1": {
+                "name": "Struja ulaza 1"
+            },
+            "tlx_amperage_input_2": {
+                "name": "Struja ulaza 2"
+            },
+            "tlx_amperage_input_3": {
+                "name": "Struja ulaza 3"
+            },
+            "tlx_amperage_input_4": {
+                "name": "Ja\u010dina struje na ulazu 4"
+            },
+            "tlx_batteries_charged_from_grid_today": {
+                "name": "Batteries charged from grid today"
+            },
+            "tlx_batteries_charged_from_grid_total": {
+                "name": "Ukupna energija napunjenih baterija iz mre\u017ee tokom veka trajanja"
+            },
+            "tlx_battery_1_charge_total": {
+                "name": "Ukupno punjenje baterije 1  tokom veka trajanja"
+            },
+            "tlx_battery_1_charge_w": {
+                "name": "Baterija 1 punjenje (W)"
+            },
+            "tlx_battery_1_discharge_total": {
+                "name": "Ukupno pra\u017enjenje baterije 1  tokom veka trajanja"
+            },
+            "tlx_battery_1_discharge_w": {
+                "name": "Baterija 1 pra\u017enjenje (W)"
+            },
+            "tlx_battery_2_charge_total": {
+                "name": "Ukupno punjenje baterije 2  tokom veka trajanja"
+            },
+            "tlx_battery_2_charge_w": {
+                "name": "Baterija 2 punjenje (W)"
+            },
+            "tlx_battery_2_discharge_total": {
+                "name": "Ukupno pra\u017enjenje baterije 2  tokom veka trajanja"
+            },
+            "tlx_battery_2_discharge_w": {
+                "name": "Baterija 2 pra\u017enjenje (W)"
+            },
+            "tlx_current_wattage": {
+                "name": "Izlazna snaga"
+            },
+            "tlx_energy_today": {
+                "name": "Energija danas"
+            },
+            "tlx_energy_today_input_1": {
+                "name": "Energija danas ulaz 1"
+            },
+            "tlx_energy_today_input_2": {
+                "name": "Energija danas ulaz 2"
+            },
+            "tlx_energy_today_input_3": {
+                "name": "Energija danas ulaz 3"
+            },
+            "tlx_energy_today_input_4": {
+                "name": "Energija danas ulaz 4"
+            },
+            "tlx_energy_total": {
+                "name": "Ukupna proizvedena energija veka trajanja"
+            },
+            "tlx_energy_total_input_1": {
+                "name": "Ukupna energija ulaza 1 tokom veka trajanja"
+            },
+            "tlx_energy_total_input_2": {
+                "name": "Ukupna energija ulaza 2 tokom veka trajanja"
+            },
+            "tlx_energy_total_input_3": {
+                "name": "Ukupna energija ulaza 3 tokom veka trajanja"
+            },
+            "tlx_energy_total_input_4": {
+                "name": "Ukupna energija ulaza 4 tokom veka trajanja"
+            },
+            "tlx_export_to_grid_today": {
+                "name": "Predato mre\u017ei danas"
+            },
+            "tlx_export_to_grid_total": {
+                "name": "Ukupna energija predata mre\u017ei tokom veka trajanja"
+            },
+            "tlx_frequency": {
+                "name": "Frekvencija naizmeni\u010dne struje"
+            },
+            "tlx_import_from_grid_today": {
+                "name": "Preuzeto iz mre\u017ee danas"
+            },
+            "tlx_import_from_grid_total": {
+                "name": "Ukupna uve\u017eena energija iz mre\u017ee tokom veka trajanja"
+            },
+            "tlx_internal_wattage": {
+                "name": "Unutra\u0161nja snaga (u vatima)"
+            },
+            "tlx_load_consumption_today": {
+                "name": "Potro\u0161nja optere\u0107enja danas"
+            },
+            "tlx_p_self": {
+                "name": "Sopstvena energija"
+            },
+            "tlx_p_system": {
+                "name": "Snaga sistema"
+            },
+            "tlx_pac_to_grid_total": {
+                "name": "Isporu\u010dena energija"
+            },
+            "tlx_pac_to_local_load": {
+                "name": "Snaga lokalnog optere\u0107enja"
+            },
+            "tlx_pac_to_user_total": {
+                "name": "Uvezena energija"
+            },
+            "tlx_reactive_voltage": {
+                "name": "Reaktivni napon"
+            },
+            "tlx_self_consumption_today": {
+                "name": "Dana\u0161nja sopstvena potro\u0161nja"
+            },
+            "tlx_self_consumption_total": {
+                "name": "Ukupna sopstvena potro\u0161nja tokom veka trajanja"
+            },
+            "tlx_solar_generation_today": {
+                "name": "Solarna energija danas"
+            },
+            "tlx_solar_generation_total": {
+                "name": "Ukupna solarna energija tokom veka trajanja"
+            },
+            "tlx_statement_of_charge": {
+                "name": "Nivo napunjenosti (SoC)"
+            },
+            "tlx_system_production_today": {
+                "name": "Dana\u0161nja proizvodnja sistema"
+            },
+            "tlx_system_production_total": {
+                "name": "Ukupna proizvodnja sistema tokom veka trajanja"
+            },
+            "tlx_temperature_1": {
+                "name": "Temperatura 1"
+            },
+            "tlx_temperature_2": {
+                "name": "Temperatura 2"
+            },
+            "tlx_temperature_3": {
+                "name": "Temperatura 3"
+            },
+            "tlx_temperature_4": {
+                "name": "Temperatura 4"
+            },
+            "tlx_temperature_5": {
+                "name": "Temperatura 5"
+            },
+            "tlx_voltage_input_1": {
+                "name": "Napon ulaza 1"
+            },
+            "tlx_voltage_input_2": {
+                "name": "Napon ulaza 2"
+            },
+            "tlx_voltage_input_3": {
+                "name": "Napon ulaza 3"
+            },
+            "tlx_voltage_input_4": {
+                "name": "Napon ulaza 4"
+            },
+            "tlx_wattage_input_1": {
+                "name": "Snaga ulaza 1"
+            },
+            "tlx_wattage_input_2": {
+                "name": "Snaga ulaza 2"
+            },
+            "tlx_wattage_input_3": {
+                "name": "Snaga ulaza 3"
+            },
+            "tlx_wattage_input_4": {
+                "name": "Snaga ulaza 4"
+            },
+            "total_energy_output": {
+                "name": "Ukupna proizvedena energija veka trajanja"
+            },
+            "total_energy_today": {
+                "name": "Energija danas"
+            },
+            "total_maximum_output": {
+                "name": "Maksimalna snaga"
+            },
+            "total_money_today": {
+                "name": "Ukupan nov\u010dani iznos danas"
+            },
+            "total_money_total": {
+                "name": "Ukupan nov\u010dani iznos tokom rada"
+            },
+            "total_output_power": {
+                "name": "Izlazna snaga"
+            }
+        },
+        "switch": {
+            "ac_charge": {
+                "name": "Puni iz mre\u017ee"
+            }
+        }
+    },
+    "exceptions": {
+        "api_error": {
+            "message": "Gre\u0161ka Growatt API-ja: {error}"
+        },
+        "api_error_with_code": {
+            "message": "Gre\u0161ka API-ja: {error} (Kod: {code})"
+        },
+        "auth_failed": {
+            "message": "Autentifikacija nije uspela za Growatt API: {error}"
+        },
+        "communication_error": {
+            "message": "Gre\u0161ka u komunikaciji sa Growatt API-jem: {error}"
+        },
+        "device_not_configured": {
+            "message": "{device_type} ure\u0111aj sa serijskim brojem {serial_number} nije konfigurisan za akcije."
+        },
+        "device_not_found": {
+            "message": "Ure\u0111aj {device_id} nije prona\u0111en u registru ure\u0111aja."
+        },
+        "device_not_growatt": {
+            "message": "Ure\u0111aj {device_id} nije Growatt ure\u0111aj."
+        },
+        "fetch_data_failed": {
+            "message": "Gre\u0161ka pri preuzimanju podataka sa Growatt API-ja: {error}"
+        },
+        "invalid_batt_mode": {
+            "message": "{batt_mode} nije ispravan re\u017eim baterije. Dozvoljene vrednosti su: {allowed_modes}."
+        },
+        "invalid_charge_power": {
+            "message": "'Snaga punjenja' mora biti izme\u0111u 0 i 100, uneto je {value}."
+        },
+        "invalid_charge_stop_soc": {
+            "message": "'Nivo napunjenosti za zaustavljanje' (Charge stop SOC) mora biti izme\u0111u 0 i 100, uneto je {value}."
+        },
+        "invalid_credentials": {
+            "message": "Korisni\u010dko ime, lozinka ili URL adresa mo\u017eda nisu ispravni"
+        },
+        "invalid_discharge_power": {
+            "message": "'Snaga pra\u017enjenja' mora biti izme\u0111u 0 i 100, uneto je {value}."
+        },
+        "invalid_discharge_stop_soc": {
+            "message": "'Nivo napunjenosti za zaustavljanje pra\u017enjenja' (Discharge stop SOC) mora biti izme\u0111u 0 i 100, uneto je {value}."
+        },
+        "invalid_segment_id": {
+            "message": "'ID segmenta' mora biti izme\u0111u 1 i 9, uneto je {segment_id}."
+        },
+        "invalid_time_format_end_time": {
+            "message": "\u2019Vreme zavr\u0161etka\u2019 mora biti u formatu HH:MM ili HH:MM:SS."
+        },
+        "invalid_time_format_period_end": {
+            "message": "\u2019Kraj perioda {period}\u2019 mora biti u formatu HH:MM ili HH:MM:SS."
+        },
+        "invalid_time_format_period_start": {
+            "message": "\u2019Po\u010detak perioda {period}\u2019 mora biti u formatu HH:MM ili HH:MM:SS."
+        },
+        "invalid_time_format_start_time": {
+            "message": "\u2019Vreme po\u010detka\u2019 mora biti u formatu HH:MM ili HH:MM:SS."
+        },
+        "login_failed": {
+            "message": "Prijava na Growatt nije uspela: {message}"
+        },
+        "migration_invalid_plant_id": {
+            "message": "Konfiguracija sadr\u017ei neispravan ID elektrane, ponovo konfiguri\u0161ite integraciju"
+        },
+        "migration_missing_credentials": {
+            "message": "Nedostaje korisni\u010dko ime ili lozinka, ponovo konfiguri\u0161ite integraciju"
+        },
+        "migration_no_plants": {
+            "message": "Nema elektrana za Growatt nalog {username}"
+        },
+        "migration_plant_id_failed": {
+            "message": "Preuzimanje ID-ja elektrane sa Growatt API-ja nije uspelo"
+        },
+        "no_devices_configured": {
+            "message": "Nijedan {device_type} ure\u0111aj sa prijavom pomo\u0107u tokena nije konfigurisan. Akcije zahtevaju {device_type} ure\u0111aje sa V1 API pristupom."
+        },
+        "rate_limited": {
+            "message": "Broj zahteva za Growatt API je ograni\u010den, poku\u0161a\u0107e se ponovo: {error}"
+        },
+        "token_auth_required": {
+            "message": "Ova akcija zahteva prijavu putem tokena (V1 API)."
+        },
+        "unknown_auth_type": {
+            "message": "Nepoznat tip autentifikacije u stavci konfiguracije"
+        }
+    },
+    "selector": {
+        "batt_mode": {
+            "options": {
+                "battery_first": "Baterija prvo",
+                "grid_first": "Mre\u017ea prvo",
+                "load_first": "U\u010ditaj prvo"
+            }
+        },
+        "region": {
+            "options": {
+                "australia_new_zealand": "Australia and New Zealand",
+                "china": "Kina",
+                "era_server": "Era server (Atess Power)",
+                "north_america": "Severna Amerika",
+                "other_regions": "Ostali regioni",
+                "smten_server": "SMTEN server"
+            }
+        }
+    },
+    "services": {
+        "read_ac_charge_times": {
+            "description": "\u010cita vremenske periode AC punjenja sa SPH ure\u0111aja.",
+            "fields": {
+                "device_id": {
+                    "description": "Growatt ure\u0111aj na kojem \u0107e se izvr\u0161iti radnja.",
+                    "name": "Ure\u0111aj"
+                }
+            },
+            "name": "O\u010ditaj vremena punjenja AC struje"
+        },
+        "read_ac_discharge_times": {
+            "description": "\u010cita vremenske periode AC pra\u017enjenja sa SPH ure\u0111aja.",
+            "fields": {
+                "device_id": {
+                    "description": "Growatt ure\u0111aj na kojem \u0107e se izvr\u0161iti radnja.",
+                    "name": "Ure\u0111aj"
+                }
+            },
+            "name": "O\u010ditaj vremena pra\u017enjenja AC struje"
+        },
+        "read_time_segments": {
+            "description": "\u010cita sve vremenske segmente sa podr\u017eanog invertora.",
+            "fields": {
+                "device_id": {
+                    "description": "Growatt ure\u0111aj na kojem \u0107e se izvr\u0161iti radnja.",
+                    "name": "Ure\u0111aj"
+                }
+            },
+            "name": "Pro\u010ditaj vremenske segmente"
+        },
+        "update_time_segment": {
+            "description": "A\u017eurira vremenski segment za podr\u017eane invertore.",
+            "fields": {
+                "batt_mode": {
+                    "description": "Re\u017eim rada na bateriju za ovaj vremenski segment.",
+                    "name": "Re\u017eim baterije"
+                },
+                "device_id": {
+                    "description": "Growatt ure\u0111aj na kojem \u0107e se izvr\u0161iti radnja.",
+                    "name": "Ure\u0111aj"
+                },
+                "enabled": {
+                    "description": "Da li je ovaj vremenski segment aktivan.",
+                    "name": "Omogu\u0107eno"
+                },
+                "end_time": {
+                    "description": "Vreme zavr\u0161etka segmenta (HH:MM format).",
+                    "name": "Vreme zavr\u0161etka"
+                },
+                "segment_id": {
+                    "description": "ID vremenskog segmenta (1\u20139)",
+                    "name": "ID segmenta"
+                },
+                "start_time": {
+                    "description": "Vreme po\u010detka segmenta (format HH:MM).",
+                    "name": "Vreme po\u010detka"
+                }
+            },
+            "name": "A\u017euriraj vremenski segment"
+        },
+        "write_ac_charge_times": {
+            "description": "Upisuje vremenske periode AC punjenja na SPH ure\u0111aj.",
+            "fields": {
+                "charge_power": {
+                    "description": "Ograni\u010denje snage punjenja (%).",
+                    "name": "Snaga punjenja"
+                },
+                "charge_stop_soc": {
+                    "description": "Zaustavi punjenje na ovom nivou napunjenosti (%).",
+                    "name": "SOC zaustavljanja punjenja"
+                },
+                "device_id": {
+                    "description": "Growatt ure\u0111aj na kojem \u0107e se izvr\u0161iti radnja.",
+                    "name": "Ure\u0111aj"
+                },
+                "mains_enabled": {
+                    "description": "Omogu\u0107i punjenje iz mre\u017ee (AC).",
+                    "name": "Punjenje iz mre\u017ee omogu\u0107eno"
+                },
+                "period_1_enabled": {
+                    "description": "Omogu\u0107i vremenski period 1.",
+                    "name": "Period 1 je omogu\u0107en"
+                },
+                "period_1_end": {
+                    "description": "Vreme zavr\u0161etka za period 1 (HH:MM ili HH:MM:SS).",
+                    "name": "Zavr\u0161etak perioda 1"
+                },
+                "period_1_start": {
+                    "description": "Vreme po\u010detka za period 1 (HH:MM ili HH:MM:SS).",
+                    "name": "Po\u010detak perioda 1"
+                },
+                "period_2_enabled": {
+                    "description": "Omogu\u0107i vremenski period 2.",
+                    "name": "Period 2 je omogu\u0107en"
+                },
+                "period_2_end": {
+                    "description": "Vreme zavr\u0161etka za period 2 (HH:MM ili HH:MM:SS).",
+                    "name": "Zavr\u0161etak perioda 2"
+                },
+                "period_2_start": {
+                    "description": "Vreme po\u010detka za period 2 (HH:MM ili HH:MM:SS).",
+                    "name": "Po\u010detak perioda 2"
+                },
+                "period_3_enabled": {
+                    "description": "Omogu\u0107i vremenski period 3.",
+                    "name": "Period 3 je omogu\u0107en"
+                },
+                "period_3_end": {
+                    "description": "Vreme zavr\u0161etka za period 3 (HH:MM ili HH:MM:SS).",
+                    "name": "Zavr\u0161etak perioda 3"
+                },
+                "period_3_start": {
+                    "description": "Vreme po\u010detka za period 3 (HH:MM ili HH:MM:SS).",
+                    "name": "Po\u010detak perioda 3"
+                }
+            },
+            "name": "Upi\u0161i vremena punjenja AC struje"
+        },
+        "write_ac_discharge_times": {
+            "description": "Upisuje vremenske periode AC pra\u017enjenja na SPH ure\u0111aj.",
+            "fields": {
+                "device_id": {
+                    "description": "Growatt ure\u0111aj na kojem \u0107e se izvr\u0161iti radnja.",
+                    "name": "Ure\u0111aj"
+                },
+                "discharge_power": {
+                    "description": "Ograni\u010denje snage pra\u017enjenja (%)",
+                    "name": "Snaga pra\u017enjenja"
+                },
+                "discharge_stop_soc": {
+                    "description": "Zaustavi pra\u017enjenje na ovom nivou napunjenosti (%).",
+                    "name": "SOC zaustavljanja pra\u017enjenja"
+                },
+                "period_1_enabled": {
+                    "description": "Omogu\u0107i vremenski period 1.",
+                    "name": "Period 1 je omogu\u0107en"
+                },
+                "period_1_end": {
+                    "description": "Vreme zavr\u0161etka za period 1 (HH:MM ili HH:MM:SS).",
+                    "name": "Zavr\u0161etak perioda 1"
+                },
+                "period_1_start": {
+                    "description": "Vreme po\u010detka za period 1 (HH:MM ili HH:MM:SS).",
+                    "name": "Po\u010detak perioda 1"
+                },
+                "period_2_enabled": {
+                    "description": "Omogu\u0107i vremenski period 2.",
+                    "name": "Period 2 je omogu\u0107en"
+                },
+                "period_2_end": {
+                    "description": "Vreme zavr\u0161etka za period 2 (HH:MM ili HH:MM:SS).",
+                    "name": "Zavr\u0161etak perioda 2"
+                },
+                "period_2_start": {
+                    "description": "Vreme po\u010detka za period 2 (HH:MM ili HH:MM:SS).",
+                    "name": "Po\u010detak perioda 2"
+                },
+                "period_3_enabled": {
+                    "description": "Omogu\u0107i vremenski period 3.",
+                    "name": "Period 3 je omogu\u0107en"
+                },
+                "period_3_end": {
+                    "description": "Vreme zavr\u0161etka za period 3 (HH:MM ili HH:MM:SS).",
+                    "name": "Zavr\u0161etak perioda 3"
+                },
+                "period_3_start": {
+                    "description": "Vreme po\u010detka za period 3 (HH:MM ili HH:MM:SS).",
+                    "name": "Po\u010detak perioda 3"
+                }
+            },
+            "name": "Upi\u0161i vremena pra\u017enjenja naizmeni\u010dne struje"
+        }
+    },
+    "title": "Growatt Server"
+}

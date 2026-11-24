@@ -1,0 +1,872 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u88dd\u7f6e\u5df2\u7d93\u8a2d\u5b9a\u5b8c\u6210",
+            "cannot_connect": "\u9023\u7dda\u5931\u6557",
+            "no_plants": "\u5e33\u865f\u4e2d\u627e\u4e0d\u5230\u4efb\u4f55\u690d\u7269"
+        },
+        "error": {
+            "cannot_connect": "\u7121\u6cd5\u9023\u7dda\u81f3 Growatt \u4f3a\u670d\u5668\u3002\u8acb\u6aa2\u67e5\u7db2\u969b\u7db2\u8def\u9023\u7dda\uff0c\u7136\u5f8c\u518d\u8a66\u4e00\u6b21\u3002",
+            "invalid_auth": "\u9a57\u8b49\u5931\u6557\u3001\u8acb\u6aa2\u67e5\u6191\u8b49\u5f8c\u518d\u8a66\u4e00\u6b21\u3002"
+        },
+        "step": {
+            "password_auth": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "region": "\u4f3a\u670d\u5668\u5340\u57df",
+                    "username": "\u4f7f\u7528\u8005\u540d\u7a31"
+                },
+                "data_description": {
+                    "password": "Growatt \u5e33\u865f\u5bc6\u78bc\u3002",
+                    "region": "\u8207 Growatt \u5e33\u865f\u4f4d\u7f6e\u76f8\u7b26\u7684\u4f3a\u670d\u5668\u5340\u57df\u3002",
+                    "username": "Growatt \u5e33\u865f\u96fb\u5b50\u90f5\u4ef6\u4f4d\u5740\u6216\u4f7f\u7528\u8005\u540d\u7a31\u3002"
+                },
+                "title": "\u8f38\u5165 Growatt \u767b\u5165\u6191\u8b49"
+            },
+            "plant": {
+                "data": {
+                    "plant_id": "\u690d\u7269"
+                },
+                "data_description": {
+                    "plant_id": "\u8981\u6574\u5408\u7684 Growatt \u767c\u96fb\u7ad9\uff08\u592a\u967d\u80fd\u88dd\u7f6e\uff09\u3002"
+                },
+                "title": "\u9078\u64c7\u690d\u7269"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "region": "\u4f3a\u670d\u5668\u5340\u57df",
+                    "token": "API \u6b0a\u6756",
+                    "username": "\u4f7f\u7528\u8005\u540d\u7a31"
+                },
+                "data_description": {
+                    "password": "Growatt \u5e33\u865f\u5bc6\u78bc\u3002",
+                    "region": "\u8207 Growatt \u5e33\u865f\u4f4d\u7f6e\u76f8\u7b26\u7684\u4f3a\u670d\u5668\u5340\u57df\u3002",
+                    "token": "Growatt \u5e33\u865f API \u6b0a\u6756\u3002\u53ef\u4ee5\u900f\u904e Growatt \u7db2\u9801\u5165\u53e3\u7db2\u7ad9\u6216 ShinePhone \u61c9\u7528\u7a0b\u5f0f\u7522\u751f\u3002",
+                    "username": "Growatt \u5e33\u865f\u96fb\u5b50\u90f5\u4ef6\u4f4d\u5740\u6216\u4f7f\u7528\u8005\u540d\u7a31\u3002"
+                },
+                "description": "\u91cd\u65b0\u8f38\u5165\u6191\u8b49\uff0c\u4ee5\u7e7c\u7e8c\u4f7f\u7528\u6b64\u6574\u5408\u3002",
+                "title": "\u91cd\u65b0\u8a8d\u8b49 Growatt"
+            },
+            "reconfigure": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "region": "\u4f3a\u670d\u5668\u5340\u57df",
+                    "token": "API \u6b0a\u6756",
+                    "username": "\u4f7f\u7528\u8005\u540d\u7a31"
+                },
+                "data_description": {
+                    "password": "Growatt \u5e33\u865f\u5bc6\u78bc\u3002",
+                    "region": "\u8207 Growatt \u5e33\u865f\u4f4d\u7f6e\u76f8\u7b26\u7684\u4f3a\u670d\u5668\u5340\u57df\u3002",
+                    "token": "Growatt \u5e33\u865f API \u6b0a\u6756\u3002\u53ef\u4ee5\u900f\u904e Growatt \u7db2\u9801\u5165\u53e3\u7db2\u7ad9\u6216 ShinePhone \u61c9\u7528\u7a0b\u5f0f\u7522\u751f\u3002",
+                    "username": "Growatt \u5e33\u865f\u96fb\u5b50\u90f5\u4ef6\u4f4d\u5740\u6216\u4f7f\u7528\u8005\u540d\u7a31\u3002"
+                },
+                "description": "\u66f4\u65b0\u6191\u8b49\uff0c\u4ee5\u7e7c\u7e8c\u4f7f\u7528\u6b64\u6574\u5408\u3002",
+                "title": "\u91cd\u65b0\u8a2d\u5b9a Growatt"
+            },
+            "token_auth": {
+                "data": {
+                    "region": "\u4f3a\u670d\u5668\u5340\u57df",
+                    "token": "API \u6b0a\u6756"
+                },
+                "data_description": {
+                    "region": "\u8207 Growatt \u5e33\u865f\u4f4d\u7f6e\u76f8\u7b26\u7684\u4f3a\u670d\u5668\u5340\u57df\u3002",
+                    "token": "Growatt \u5e33\u865f API \u6b0a\u6756\u3002\u53ef\u4ee5\u900f\u904e Growatt \u7db2\u9801\u5165\u53e3\u7db2\u7ad9\u6216 ShinePhone \u61c9\u7528\u7a0b\u5f0f\u7522\u751f\u3002"
+                },
+                "description": "\u50c5\u6709 MIN/SPH \u88dd\u7f6e\u652f\u63f4\u6b0a\u6756\u8a8d\u8b49\u3002\u5176\u4ed6\u88dd\u7f6e\u985e\u578b\u8acb\u4f7f\u7528\u4f7f\u7528\u8005\u540d\u7a31/\u5bc6\u78bc\u8a8d\u8b49\u3002",
+                "title": "\u8f38\u5165 API \u6b0a\u6756"
+            },
+            "user": {
+                "description": "\u6ce8\u610f\uff1a\u76ee\u524d\u50c5\u6709 MIN/SPH \u88dd\u7f6e\u652f\u63f4\u6b0a\u6756\u8a8d\u8b49\u3002\u5176\u4ed6\u88dd\u7f6e\u985e\u578b\u8acb\u4f7f\u7528\u4f7f\u7528\u8005\u540d\u7a31/\u5bc6\u78bc\u9032\u884c\u8a8d\u8b49\u3002",
+                "menu_options": {
+                    "password_auth": "\u4f7f\u7528\u8005\u540d\u7a31/\u5bc6\u78bc",
+                    "token_auth": "API \u6b0a\u6756\uff08\u50c5\u9650 MIN/SPH\uff09"
+                },
+                "title": "\u9078\u64c7\u9a57\u8b49\u6a21\u5f0f"
+            }
+        }
+    },
+    "entity": {
+        "number": {
+            "battery_charge_power_limit": {
+                "name": "\u96fb\u6c60\u5145\u96fb\u529f\u7387\u9650\u5236"
+            },
+            "battery_charge_soc_limit": {
+                "name": "\u96fb\u6c60\u5145\u96fb SOC \u9650\u5236"
+            },
+            "battery_discharge_power_limit": {
+                "name": "\u96fb\u6c60\u653e\u96fb\u529f\u7387\u9650\u5236"
+            },
+            "battery_discharge_soc_limit_off_grid": {
+                "name": "\u96fb\u6c60\u653e\u96fb SOC \u9650\u5236\uff08\u96e2\u7db2\uff09"
+            },
+            "battery_discharge_soc_limit_on_grid": {
+                "name": "\u96fb\u6c60\u653e\u96fb SOC \u9650\u5236\uff08\u4f75\u7db2\uff09"
+            }
+        },
+        "sensor": {
+            "inverter_amperage_input_1": {
+                "name": "\u8f38\u5165 1 \u5b89\u57f9"
+            },
+            "inverter_amperage_input_2": {
+                "name": "\u8f38\u5165 2 \u5b89\u57f9"
+            },
+            "inverter_amperage_input_3": {
+                "name": "\u8f38\u5165 3 \u5b89\u57f9"
+            },
+            "inverter_current_reactive_wattage": {
+                "name": "\u7121\u529f\u74e6\u6578"
+            },
+            "inverter_current_wattage": {
+                "name": "\u8f38\u51fa\u529f\u7387"
+            },
+            "inverter_energy_today": {
+                "name": "\u672c\u65e5\u80fd\u6e90"
+            },
+            "inverter_energy_total": {
+                "name": "\u5168\u671f\u80fd\u6e90\u8f38\u51fa"
+            },
+            "inverter_frequency": {
+                "name": "\u4ea4\u6d41\u983b\u7387"
+            },
+            "inverter_internal_wattage": {
+                "name": "\u5167\u90e8\u74e6\u6578"
+            },
+            "inverter_ipm_temperature": {
+                "name": "\u667a\u80fd\u96fb\u6e90\u7ba1\u7406\u6eab\u5ea6"
+            },
+            "inverter_reactive_amperage": {
+                "name": "\u7121\u529f\u96fb\u6d41"
+            },
+            "inverter_reactive_voltage": {
+                "name": "\u7121\u529f\u96fb\u58d3"
+            },
+            "inverter_temperature": {
+                "name": "\u9006\u8b8a\u5668\u6eab\u5ea6"
+            },
+            "inverter_voltage_input_1": {
+                "name": "\u8f38\u5165 \uff11 \u96fb\u58d3"
+            },
+            "inverter_voltage_input_2": {
+                "name": "\u8f38\u5165 2 \u96fb\u58d3"
+            },
+            "inverter_voltage_input_3": {
+                "name": "\u8f38\u5165 3 \u96fb\u58d3"
+            },
+            "inverter_wattage_input_1": {
+                "name": "\u8f38\u5165 \uff11 \u74e6\u6578"
+            },
+            "inverter_wattage_input_2": {
+                "name": "\u8f38\u5165 2 \u74e6\u6578"
+            },
+            "inverter_wattage_input_3": {
+                "name": "\u8f38\u5165 3 \u74e6\u6578"
+            },
+            "mix_battery_charge": {
+                "name": "\u96fb\u6c60\u5145\u96fb\u4e2d"
+            },
+            "mix_battery_charge_lifetime": {
+                "name": "\u5168\u671f\u5145\u96fb\u96fb\u6c60"
+            },
+            "mix_battery_charge_today": {
+                "name": "\u4eca\u65e5\u5145\u96fb\u96fb\u6c60"
+            },
+            "mix_battery_discharge_kw": {
+                "name": "\u96fb\u6c60\u653e\u96fb kW"
+            },
+            "mix_battery_discharge_lifetime": {
+                "name": "\u5168\u671f\u96fb\u6c60\u653e\u96fb"
+            },
+            "mix_battery_discharge_today": {
+                "name": "\u4eca\u65e5\u96fb\u6c60\u653e\u96fb"
+            },
+            "mix_battery_discharge_w": {
+                "name": "\u96fb\u6c60\u653e\u96fb W"
+            },
+            "mix_battery_voltage": {
+                "name": "\u96fb\u6c60\u96fb\u58d3"
+            },
+            "mix_export_to_grid": {
+                "name": "\u8f38\u51fa\u81f3\u96fb\u7db2"
+            },
+            "mix_export_to_grid_lifetime": {
+                "name": "\u5168\u671f\u8f38\u51fa\u81f3\u96fb\u7db2"
+            },
+            "mix_export_to_grid_today": {
+                "name": "\u672c\u65e5\u8f38\u51fa\u81f3\u96fb\u7db2"
+            },
+            "mix_grid_voltage": {
+                "name": "\u96fb\u7db2\u96fb\u58d3"
+            },
+            "mix_import_from_grid": {
+                "name": "\u5f9e\u96fb\u7db2\u8f38\u5165"
+            },
+            "mix_import_from_grid_today": {
+                "name": "\u672c\u65e5\u96fb\u7db2\u8f38\u5165 (\u8ca0\u8f09)"
+            },
+            "mix_import_from_grid_today_combined": {
+                "name": "\u672c\u65e5\u96fb\u7db2\u8f38\u5165 (\u8ca0\u8f09 + \u5145\u96fb)"
+            },
+            "mix_last_update": {
+                "name": "\u6700\u5f8c\u8cc7\u6599\u66f4\u65b0"
+            },
+            "mix_load_consumption": {
+                "name": "\u8ca0\u8f09\u8017\u80fd"
+            },
+            "mix_load_consumption_battery_today": {
+                "name": "\u4eca\u65e5\u8ca0\u8f09\u7e3d\u8017\u80fd (\u96fb\u6c60)"
+            },
+            "mix_load_consumption_lifetime": {
+                "name": "\u5168\u671f\u8ca0\u8f09\u6d88\u8017"
+            },
+            "mix_load_consumption_solar_today": {
+                "name": "\u4eca\u65e5\u8ca0\u8f09\u7e3d\u8017\u80fd (\u592a\u967d\u80fd)"
+            },
+            "mix_load_consumption_today": {
+                "name": "\u4eca\u65e5\u8ca0\u8f09\u7e3d\u8017\u80fd"
+            },
+            "mix_load_consumption_total": {
+                "name": "\u5168\u671f\u7e3d\u8ca0\u8f09\u6d88\u8017"
+            },
+            "mix_pv1_voltage": {
+                "name": "PV1 \u96fb\u58d3"
+            },
+            "mix_pv2_voltage": {
+                "name": "PV2 \u96fb\u58d3"
+            },
+            "mix_self_consumption_today": {
+                "name": "\u4eca\u65e5\u81ea\u6211\u7e3d\u8017\u80fd (\u592a\u967d\u80fd + \u96fb\u6c60)"
+            },
+            "mix_solar_generation_lifetime": {
+                "name": "\u5168\u671f\u592a\u967d\u80fd\u80fd\u6e90"
+            },
+            "mix_solar_generation_today": {
+                "name": "\u672c\u65e5\u592a\u967d\u80fd"
+            },
+            "mix_statement_of_charge": {
+                "name": "\u5145\u96fb\u72c0\u614b"
+            },
+            "mix_system_production_today": {
+                "name": "\u4eca\u65e5\u7cfb\u7d71\u751f\u7522\uff08\u81ea\u6211\u6d88\u8017 + \u8f38\u51fa\uff09"
+            },
+            "mix_wattage_pv_1": {
+                "name": "PV1 \u74e6\u6578"
+            },
+            "mix_wattage_pv_2": {
+                "name": "PV2 \u74e6\u6578"
+            },
+            "mix_wattage_pv_all": {
+                "name": "\u6240\u6709 PV \u74e6\u6578"
+            },
+            "sph_grid_frequency": {
+                "name": "\u4ea4\u6d41\u983b\u7387"
+            },
+            "sph_temperature_1": {
+                "name": "\u6eab\u5ea6 1"
+            },
+            "sph_temperature_2": {
+                "name": "\u6eab\u5ea6 2"
+            },
+            "sph_temperature_3": {
+                "name": "\u6eab\u5ea6 3"
+            },
+            "sph_temperature_4": {
+                "name": "\u6eab\u5ea6 4"
+            },
+            "sph_temperature_5": {
+                "name": "\u6eab\u5ea6 5"
+            },
+            "storage_ac_input_frequency_out": {
+                "name": "\u4ea4\u6d41\u8f38\u5165\u983b\u7387"
+            },
+            "storage_ac_output_frequency": {
+                "name": "\u4ea4\u6d41\u8f38\u51fa\u983b\u7387"
+            },
+            "storage_battery_percentage": {
+                "name": "\u96fb\u6c60\u767e\u5206\u6bd4"
+            },
+            "storage_battery_voltage": {
+                "name": "\u96fb\u6c60\u96fb\u58d3"
+            },
+            "storage_charge_storage_lifetime": {
+                "name": "\u5168\u671f\u5132\u5b58\u96fb\u91cf"
+            },
+            "storage_charge_today": {
+                "name": "\u4eca\u65e5\u5145\u96fb"
+            },
+            "storage_current_1": {
+                "name": "PV1 \u96fb\u6d41\u5132\u5b58"
+            },
+            "storage_current_2": {
+                "name": "PV2 \u96fb\u6d41\u5132\u5b58"
+            },
+            "storage_current_pv": {
+                "name": "\u592a\u967d\u80fd\u5145\u96fb\u96fb\u6d41"
+            },
+            "storage_grid_amperage_input": {
+                "name": "\u96fb\u7db2\u5145\u96fb\u96fb\u6d41"
+            },
+            "storage_grid_charged_lifetime": {
+                "name": "\u5168\u671f\u96fb\u7db2\u5145\u96fb"
+            },
+            "storage_grid_charged_today": {
+                "name": "\u4eca\u65e5\u96fb\u7db2\u5145\u96fb"
+            },
+            "storage_grid_discharge_lifetime": {
+                "name": "\u5168\u671f\u96fb\u7db2\u653e\u96fb"
+            },
+            "storage_grid_discharge_today": {
+                "name": "\u4eca\u65e5\u96fb\u7db2\u653e\u96fb"
+            },
+            "storage_grid_out_current": {
+                "name": "\u96fb\u7db2\u8f38\u51fa\u96fb\u6d41"
+            },
+            "storage_grid_voltage": {
+                "name": "\u4ea4\u6d41\u8f38\u5165\u96fb\u58d3"
+            },
+            "storage_import_from_grid": {
+                "name": "\u5f9e\u96fb\u7db2\u8f38\u5165"
+            },
+            "storage_import_from_grid_today": {
+                "name": "\u672c\u65e5\u96fb\u7db2\u8f38\u5165"
+            },
+            "storage_import_from_grid_total": {
+                "name": "\u7531\u96fb\u7db2\u8f38\u5165\u7e3d\u8a08"
+            },
+            "storage_load_consumption": {
+                "name": "\u8ca0\u8f09\u8017\u80fd"
+            },
+            "storage_load_consumption_lifetime": {
+                "name": "\u5168\u671f\u8ca0\u8f09\u6d88\u8017"
+            },
+            "storage_load_consumption_solar_storage": {
+                "name": "\u8ca0\u8f09\u7e3d\u8017\u80fd (\u592a\u967d\u80fd + \u5132\u5b58\uff09"
+            },
+            "storage_load_consumption_today": {
+                "name": "\u4eca\u65e5\u8ca0\u8f09\u7e3d\u8017\u80fd"
+            },
+            "storage_load_percentage": {
+                "name": "\u8ca0\u8f09\u767e\u5206\u6bd4"
+            },
+            "storage_output_voltage": {
+                "name": "\u8f38\u51fa\u96fb\u58d3"
+            },
+            "storage_power_flow": {
+                "name": "\u5132\u5b58\u5145\u96fb/\u653e\u96fb (-ve)"
+            },
+            "storage_pv_charging_voltage": {
+                "name": "PV1 \u5145\u96fb\u96fb\u58d3"
+            },
+            "storage_pv_charging_voltage_2": {
+                "name": "PV2 \u5145\u96fb\u96fb\u58d3"
+            },
+            "storage_solar_output_lifetime": {
+                "name": "\u5168\u671f\u592a\u967d\u80fd\u8f38\u51fa"
+            },
+            "storage_solar_output_today": {
+                "name": "\u672c\u65e5\u592a\u967d\u80fd\u8f38\u51fa"
+            },
+            "storage_solar_production": {
+                "name": "\u592a\u967d\u80fd\u7522\u91cf\uff08PV1\uff09"
+            },
+            "storage_solar_production_2": {
+                "name": "\u592a\u967d\u80fd\u7522\u91cf\uff08PV2\uff09"
+            },
+            "storage_storage_production_lifetime": {
+                "name": "\u5168\u671f\u5132\u5b58\u7522\u91cf"
+            },
+            "storage_storage_production_today": {
+                "name": "\u4eca\u65e5\u5132\u5b58\u7522\u91cf"
+            },
+            "tlx_all_batteries_charge_today": {
+                "name": "\u4eca\u65e5\u5168\u96fb\u6c60\u5df2\u5145\u96fb"
+            },
+            "tlx_all_batteries_charge_total": {
+                "name": "\u6240\u6709\u96fb\u6c60\u5168\u671f\u7e3d\u5145\u96fb\u91cf"
+            },
+            "tlx_all_batteries_discharge_today": {
+                "name": "\u4eca\u65e5\u5168\u96fb\u6c60\u653e\u96fb"
+            },
+            "tlx_all_batteries_discharge_total": {
+                "name": "\u6240\u6709\u96fb\u6c60\u5168\u671f\u7e3d\u653e\u96fb\u91cf"
+            },
+            "tlx_amperage_input_1": {
+                "name": "\u8f38\u5165 1 \u5b89\u57f9"
+            },
+            "tlx_amperage_input_2": {
+                "name": "\u8f38\u5165 2 \u5b89\u57f9"
+            },
+            "tlx_amperage_input_3": {
+                "name": "\u8f38\u5165 3 \u5b89\u57f9"
+            },
+            "tlx_amperage_input_4": {
+                "name": "\u8f38\u5165 4 \u5b89\u57f9"
+            },
+            "tlx_batteries_charged_from_grid_today": {
+                "name": "\u4eca\u65e5\u7531\u96fb\u7db2\u5145\u96fb\u96fb\u6c60"
+            },
+            "tlx_batteries_charged_from_grid_total": {
+                "name": "\u5168\u671f\u7531\u96fb\u7db2\u5145\u96fb\u96fb\u6c60"
+            },
+            "tlx_battery_1_charge_total": {
+                "name": "\u96fb\u6c60 1 \u7e3d\u7e3d\u5145\u96fb\u91cf"
+            },
+            "tlx_battery_1_charge_w": {
+                "name": "\u96fb\u6c60 1 \u5145\u96fb W"
+            },
+            "tlx_battery_1_discharge_total": {
+                "name": "\u96fb\u6c60 1 \u7e3d\u7e3d\u653e\u96fb\u91cf"
+            },
+            "tlx_battery_1_discharge_w": {
+                "name": "\u96fb\u6c60 1 \u653e\u96fb W"
+            },
+            "tlx_battery_2_charge_total": {
+                "name": "\u96fb\u6c60 2 \u7e3d\u7e3d\u5145\u96fb\u91cf"
+            },
+            "tlx_battery_2_charge_w": {
+                "name": "\u96fb\u6c60 2 \u5145\u96fb W"
+            },
+            "tlx_battery_2_discharge_total": {
+                "name": "\u96fb\u6c60 2 \u7e3d\u7e3d\u653e\u96fb\u91cf"
+            },
+            "tlx_battery_2_discharge_w": {
+                "name": "\u96fb\u6c60 2 \u653e\u96fb W"
+            },
+            "tlx_current_wattage": {
+                "name": "\u8f38\u51fa\u529f\u7387"
+            },
+            "tlx_energy_today": {
+                "name": "\u672c\u65e5\u80fd\u6e90"
+            },
+            "tlx_energy_today_input_1": {
+                "name": "\u4eca\u65e5\u80fd\u6e90\u8f38\u5165 1"
+            },
+            "tlx_energy_today_input_2": {
+                "name": "\u4eca\u65e5\u80fd\u6e90\u8f38\u5165 2"
+            },
+            "tlx_energy_today_input_3": {
+                "name": "\u4eca\u65e5\u80fd\u6e90\u8f38\u5165 3"
+            },
+            "tlx_energy_today_input_4": {
+                "name": "\u4eca\u65e5\u80fd\u6e90\u8f38\u5165 4"
+            },
+            "tlx_energy_total": {
+                "name": "\u5168\u671f\u80fd\u6e90\u8f38\u51fa"
+            },
+            "tlx_energy_total_input_1": {
+                "name": "\u5168\u671f\u7e3d\u80fd\u6e90\u8f38\u5165 1"
+            },
+            "tlx_energy_total_input_2": {
+                "name": "\u5168\u671f\u7e3d\u80fd\u6e90\u8f38\u5165 2"
+            },
+            "tlx_energy_total_input_3": {
+                "name": "\u5168\u671f\u7e3d\u80fd\u6e90\u8f38\u5165 3"
+            },
+            "tlx_energy_total_input_4": {
+                "name": "\u5168\u671f\u7e3d\u80fd\u6e90\u8f38\u5165 4"
+            },
+            "tlx_export_to_grid_today": {
+                "name": "\u672c\u65e5\u8f38\u51fa\u81f3\u96fb\u7db2"
+            },
+            "tlx_export_to_grid_total": {
+                "name": "\u5168\u671f\u7e3d\u8f38\u51fa\u81f3\u96fb\u7db2"
+            },
+            "tlx_frequency": {
+                "name": "\u4ea4\u6d41\u983b\u7387"
+            },
+            "tlx_import_from_grid_today": {
+                "name": "\u672c\u65e5\u96fb\u7db2\u8f38\u5165"
+            },
+            "tlx_import_from_grid_total": {
+                "name": "\u5168\u671f\u96fb\u7db2\u8f38\u5165"
+            },
+            "tlx_internal_wattage": {
+                "name": "\u5167\u90e8\u74e6\u6578"
+            },
+            "tlx_load_consumption_today": {
+                "name": "\u4eca\u65e5\u8ca0\u8f09\u7e3d\u8017\u80fd"
+            },
+            "tlx_p_self": {
+                "name": "\u81ea\u529f\u7387"
+            },
+            "tlx_p_system": {
+                "name": "\u7cfb\u7d71\u529f\u7387"
+            },
+            "tlx_pac_to_grid_total": {
+                "name": "\u8f38\u51fa\u529f\u7387"
+            },
+            "tlx_pac_to_local_load": {
+                "name": "\u672c\u5730\u8ca0\u8f09\u529f\u7387"
+            },
+            "tlx_pac_to_user_total": {
+                "name": "\u8f38\u5165\u529f\u7387"
+            },
+            "tlx_reactive_voltage": {
+                "name": "\u7121\u529f\u96fb\u58d3"
+            },
+            "tlx_self_consumption_today": {
+                "name": "\u672c\u65e5\u81ea\u8017\u80fd"
+            },
+            "tlx_self_consumption_total": {
+                "name": "\u5168\u671f\u81ea\u8017\u80fd"
+            },
+            "tlx_solar_generation_today": {
+                "name": "\u672c\u65e5\u592a\u967d\u80fd"
+            },
+            "tlx_solar_generation_total": {
+                "name": "\u5168\u671f\u592a\u967d\u80fd\u80fd\u6e90"
+            },
+            "tlx_statement_of_charge": {
+                "name": "\u5145\u96fb\u72c0\u614b (SoC)"
+            },
+            "tlx_system_production_today": {
+                "name": "\u672c\u65e5\u7cfb\u7d71\u7522\u80fd"
+            },
+            "tlx_system_production_total": {
+                "name": "\u5168\u671f\u7cfb\u7d71\u7522\u80fd"
+            },
+            "tlx_temperature_1": {
+                "name": "\u6eab\u5ea6 1"
+            },
+            "tlx_temperature_2": {
+                "name": "\u6eab\u5ea6 2"
+            },
+            "tlx_temperature_3": {
+                "name": "\u6eab\u5ea6 3"
+            },
+            "tlx_temperature_4": {
+                "name": "\u6eab\u5ea6 4"
+            },
+            "tlx_temperature_5": {
+                "name": "\u6eab\u5ea6 5"
+            },
+            "tlx_voltage_input_1": {
+                "name": "\u8f38\u5165 \uff11 \u96fb\u58d3"
+            },
+            "tlx_voltage_input_2": {
+                "name": "\u8f38\u5165 2 \u96fb\u58d3"
+            },
+            "tlx_voltage_input_3": {
+                "name": "\u8f38\u5165 3 \u96fb\u58d3"
+            },
+            "tlx_voltage_input_4": {
+                "name": "\u8f38\u5165 4 \u96fb\u58d3"
+            },
+            "tlx_wattage_input_1": {
+                "name": "\u8f38\u5165 \uff11 \u74e6\u6578"
+            },
+            "tlx_wattage_input_2": {
+                "name": "\u8f38\u5165 2 \u74e6\u6578"
+            },
+            "tlx_wattage_input_3": {
+                "name": "\u8f38\u5165 3 \u74e6\u6578"
+            },
+            "tlx_wattage_input_4": {
+                "name": "\u8f38\u5165 4 \u74e6\u6578"
+            },
+            "total_energy_output": {
+                "name": "\u5168\u671f\u80fd\u6e90\u8f38\u51fa"
+            },
+            "total_energy_today": {
+                "name": "\u672c\u65e5\u80fd\u6e90"
+            },
+            "total_maximum_output": {
+                "name": "\u6700\u5927\u529f\u7387"
+            },
+            "total_money_today": {
+                "name": "\u4eca\u65e5\u7e3d\u91d1\u984d"
+            },
+            "total_money_total": {
+                "name": "\u7e3d\u91d1\u984d"
+            },
+            "total_output_power": {
+                "name": "\u8f38\u51fa\u529f\u7387"
+            }
+        },
+        "switch": {
+            "ac_charge": {
+                "name": "\u7531\u96fb\u7db2\u5145\u96fb"
+            }
+        }
+    },
+    "exceptions": {
+        "api_error": {
+            "message": "Growatt API \u932f\u8aa4\uff1a{error}"
+        },
+        "api_error_with_code": {
+            "message": "API \u932f\u8aa4\uff1a{error}\uff08\u4ee3\u78bc\uff1a{code}\uff09"
+        },
+        "auth_failed": {
+            "message": "Growatt API \u9a57\u8b49\u5931\u6557\uff1a{error}"
+        },
+        "communication_error": {
+            "message": "\u8207 Growatt API \u901a\u8a0a\u6642\u767c\u751f\u932f\u8aa4\uff1a{error}"
+        },
+        "device_not_configured": {
+            "message": "{device_type} \u88dd\u7f6e {serial_number} \u672a\u8a2d\u5b9a\u64cd\u4f5c\u3002"
+        },
+        "device_not_found": {
+            "message": "\u88dd\u7f6e\u8a3b\u518a\u8868\u4e2d\u627e\u4e0d\u5230\u88dd\u7f6e {device_id}\u3002"
+        },
+        "device_not_growatt": {
+            "message": "\u88dd\u7f6e {device_id} \u4e26\u975e Growatt \u88dd\u7f6e\u3002"
+        },
+        "fetch_data_failed": {
+            "message": "\u7531 Growatt API \u53d6\u5f97\u8cc7\u6599\u6642\u767c\u751f\u932f\u8aa4\uff1a {error}"
+        },
+        "invalid_batt_mode": {
+            "message": "{batt_mode} \u4e26\u975e\u6709\u6548\u7684\u96fb\u6c60\u6a21\u5f0f\u3002\u5141\u8a31\u6578\u503c\uff1a{allowed_modes}\u3002"
+        },
+        "invalid_charge_power": {
+            "message": "'\u5145\u96fb\u529f\u7387' \u5fc5\u9808\u4ecb\u65bc 0 \u5230 100 \u4e4b\u9593\uff0c\u76ee\u524d\u70ba {value}\u3002"
+        },
+        "invalid_charge_stop_soc": {
+            "message": "'\u5145\u96fb\u505c\u6b62 SOC'\u5fc5\u9808\u4ecb\u65bc 0 \u5230 100 \u4e4b\u9593\uff0c\u76ee\u524d\u70ba {value}\u3002"
+        },
+        "invalid_credentials": {
+            "message": "\u4f7f\u7528\u8005\u540d\u7a31\u3001\u5bc6\u78bc\u6216\u7db2\u5740\u53ef\u80fd\u4e0d\u6b63\u78ba"
+        },
+        "invalid_discharge_power": {
+            "message": "'\u653e\u96fb\u529f\u7387' \u5fc5\u9808\u4ecb\u65bc 0 \u5230 100 \u4e4b\u9593\uff0c\u76ee\u524d\u70ba {value}\u3002"
+        },
+        "invalid_discharge_stop_soc": {
+            "message": "'\u653e\u96fb\u505c\u6b62 SOC' \u5fc5\u9808\u4ecb\u65bc 0 \u5230 100 \u4e4b\u9593\uff0c\u76ee\u524d\u70ba {value}\u3002"
+        },
+        "invalid_segment_id": {
+            "message": "'\u968e\u6bb5 ID' \u5fc5\u9808\u4ecb\u65bc 1 \u5230 9 \u4e4b\u9593\uff0c\u76ee\u524d\u70ba {segment_id}\u3002"
+        },
+        "invalid_time_format_end_time": {
+            "message": "'\u7d50\u675f\u6642\u9593' \u5fc5\u9808\u70ba HH:MM \u6216 HH:MM:SS \u683c\u5f0f\u3002"
+        },
+        "invalid_time_format_period_end": {
+            "message": "'\u968e\u6bb5 {period} \u7d50\u675f' \u5fc5\u9808\u70ba HH:MM \u6216 HH:MM:SS \u683c\u5f0f\u3002"
+        },
+        "invalid_time_format_period_start": {
+            "message": "'\u968e\u6bb5 {period} \u958b\u59cb' \u5fc5\u9808\u70ba HH:MM \u6216 HH:MM:SS \u683c\u5f0f\u3002"
+        },
+        "invalid_time_format_start_time": {
+            "message": "'\u958b\u59cb\u6642\u9593' \u5fc5\u9808\u70ba HH:MM \u6216 HH:MM:SS \u683c\u5f0f\u3002"
+        },
+        "login_failed": {
+            "message": "Growatt \u767b\u5165\u5931\u6557\uff1a{message}"
+        },
+        "migration_invalid_plant_id": {
+            "message": "\u8a2d\u5b9a\u5305\u542b\u7121\u6548\u7684\u690d\u7269 ID\uff0c\u8acb\u91cd\u65b0\u8a2d\u5b9a\u6574\u5408"
+        },
+        "migration_missing_credentials": {
+            "message": "\u8a2d\u5b9a\u4e2d\u7f3a\u5c11\u4f7f\u7528\u8005\u540d\u7a31\u6216\u5bc6\u78bc\uff0c\u8acb\u91cd\u65b0\u8a2d\u5b9a\u6574\u5408"
+        },
+        "migration_no_plants": {
+            "message": "\u627e\u4e0d\u5230 Growatt \u5e33\u865f {username} \u7684\u690d\u7269"
+        },
+        "migration_plant_id_failed": {
+            "message": "\u7121\u6cd5\u5f9e Growatt API \u89e3\u6790\u690d\u7269 ID"
+        },
+        "no_devices_configured": {
+            "message": "\u672a\u8a2d\u5b9a\u4efb\u4f55\u4f7f\u7528\u6b0a\u6756\u9a57\u8b49\u7684 {device_type} \u88dd\u7f6e\u3002\u64cd\u4f5c\u9700\u8981\u5177\u5099 V1 API \u5b58\u53d6\u6b0a\u9650\u7684 {device_type} \u88dd\u7f6e\u3002"
+        },
+        "rate_limited": {
+            "message": "Growatt API \u8acb\u6c42\u983b\u7387\u53d7\u9650\uff0c\u5c07\u91cd\u8a66\uff1a{error}"
+        },
+        "token_auth_required": {
+            "message": "\u6b64\u64cd\u4f5c\u9700\u8981\u6b0a\u6756\u9a57\u8b49\uff08V1 API\uff09\u3002"
+        },
+        "unknown_auth_type": {
+            "message": "\u8a2d\u5b9a\u9805\u76ee\u4e2d\u6709\u672a\u77e5\u7684\u9a57\u8b49\u985e\u578b"
+        }
+    },
+    "selector": {
+        "batt_mode": {
+            "options": {
+                "battery_first": "\u96fb\u6c60\u512a\u5148",
+                "grid_first": "\u96fb\u7db2\u512a\u5148",
+                "load_first": "\u9996\u5148\u8f09\u5165"
+            }
+        },
+        "region": {
+            "options": {
+                "australia_new_zealand": "\u6fb3\u6d32\u8207\u7d10\u897f\u862d",
+                "china": "\u4e2d\u570b",
+                "era_server": "Era \u4f3a\u670d\u5668 (Atess Power)",
+                "north_america": "\u5317\u7f8e",
+                "other_regions": "\u5176\u4ed6\u5730\u5340",
+                "smten_server": "SMTEN \u4f3a\u670d\u5668"
+            }
+        }
+    },
+    "services": {
+        "read_ac_charge_times": {
+            "description": "\u5f9e SPH \u88dd\u7f6e\u8b80\u53d6\u4ea4\u6d41\u5145\u96fb\u6642\u9593\u6bb5\u3002",
+            "fields": {
+                "device_id": {
+                    "description": "\u8981\u57f7\u884c\u64cd\u4f5c\u7684 Growatt \u88dd\u7f6e\u3002",
+                    "name": "\u88dd\u7f6e"
+                }
+            },
+            "name": "\u8b80\u53d6\u4ea4\u6d41\u5145\u96fb\u6642\u9593"
+        },
+        "read_ac_discharge_times": {
+            "description": "\u5f9e SPH \u88dd\u7f6e\u8b80\u53d6\u4ea4\u6d41\u653e\u96fb\u6642\u9593\u6bb5\u3002",
+            "fields": {
+                "device_id": {
+                    "description": "\u8981\u57f7\u884c\u64cd\u4f5c\u7684 Growatt \u88dd\u7f6e\u3002",
+                    "name": "\u88dd\u7f6e"
+                }
+            },
+            "name": "\u8b80\u53d6\u4ea4\u6d41\u653e\u96fb\u6642\u9593"
+        },
+        "read_time_segments": {
+            "description": "\u8b80\u53d6\u652f\u63f4\u8b8a\u6d41\u5668\u7684\u6240\u6709\u6642\u9593\u5340\u6bb5\u3002",
+            "fields": {
+                "device_id": {
+                    "description": "\u8981\u57f7\u884c\u64cd\u4f5c\u7684 Growatt \u88dd\u7f6e\u3002",
+                    "name": "\u88dd\u7f6e"
+                }
+            },
+            "name": "\u8b80\u53d6\u6642\u9593\u5340\u6bb5"
+        },
+        "update_time_segment": {
+            "description": "\u66f4\u65b0\u652f\u63f4\u7684\u8b8a\u6d41\u5668\u7684\u6642\u9593\u5340\u6bb5\u3002",
+            "fields": {
+                "batt_mode": {
+                    "description": "\u6b64\u6642\u9593\u5340\u6bb5\u63a1\u7528\u96fb\u6c60\u4f9b\u96fb\u6a21\u5f0f\u3002",
+                    "name": "\u96fb\u6c60\u6a21\u5f0f"
+                },
+                "device_id": {
+                    "description": "\u8981\u57f7\u884c\u64cd\u4f5c\u7684 Growatt \u88dd\u7f6e\u3002",
+                    "name": "\u88dd\u7f6e"
+                },
+                "enabled": {
+                    "description": "\u8a72\u5340\u6bb5\u662f\u5426\u8655\u65bc\u555f\u7528\u72c0\u614b\u3002",
+                    "name": "\u5df2\u555f\u7528"
+                },
+                "end_time": {
+                    "description": "\u5340\u6bb5\u7d50\u675f\u6642\u9593\uff08HH:MM \u683c\u5f0f\uff09\u3002",
+                    "name": "\u7d50\u675f\u6642\u9593"
+                },
+                "segment_id": {
+                    "description": "\u6642\u9593\u5340\u6bb5 ID (1-9)\u3002",
+                    "name": "\u5340\u6bb5 ID"
+                },
+                "start_time": {
+                    "description": "\u5340\u6bb5\u958b\u59cb\u6642\u9593\uff08HH:MM \u683c\u5f0f\uff09\u3002",
+                    "name": "\u958b\u59cb\u6642\u9593"
+                }
+            },
+            "name": "\u66f4\u65b0\u6642\u9593\u5340\u6bb5"
+        },
+        "write_ac_charge_times": {
+            "description": "\u5c07\u4ea4\u6d41\u5145\u96fb\u6642\u9593\u6bb5\u5beb\u5165 SPH \u88dd\u7f6e\u3002",
+            "fields": {
+                "charge_power": {
+                    "description": "\u5145\u96fb\u529f\u7387\u9650\u5236\uff08%\uff09\u3002",
+                    "name": "\u5145\u96fb\u529f\u7387"
+                },
+                "charge_stop_soc": {
+                    "description": "\u65bc\u5145\u96fb\u72c0\u614b\uff08%\uff09\u6642\u505c\u6b62\u5145\u96fb\u3002",
+                    "name": "\u5145\u96fb\u505c\u6b62 SOC"
+                },
+                "device_id": {
+                    "description": "\u8981\u57f7\u884c\u64cd\u4f5c\u7684 Growatt \u88dd\u7f6e\u3002",
+                    "name": "\u88dd\u7f6e"
+                },
+                "mains_enabled": {
+                    "description": "\u958b\u555f\u555f\u7528\u4ea4\u6d41\u96fb\uff08\u5e02\u96fb\uff09\u5145\u96fb\u3002",
+                    "name": "\u5e02\u96fb\u5145\u96fb\u5df2\u555f\u7528"
+                },
+                "period_1_enabled": {
+                    "description": "\u555f\u7528\u6642\u9593\u6bb5 1\u3002",
+                    "name": "\u6642\u6bb5 1 \u5df2\u555f\u7528"
+                },
+                "period_1_end": {
+                    "description": "\u6642\u6bb5 1 \u7d50\u675f\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 1 \u7d50\u675f"
+                },
+                "period_1_start": {
+                    "description": "\u6642\u6bb5 1 \u958b\u59cb\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 1 \u5df2\u958b\u555f"
+                },
+                "period_2_enabled": {
+                    "description": "\u555f\u7528\u6642\u9593\u6bb5 2\u3002",
+                    "name": "\u6642\u6bb5 2 \u5df2\u555f\u7528"
+                },
+                "period_2_end": {
+                    "description": "\u6642\u6bb5 2 \u7d50\u675f\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 2 \u7d50\u675f"
+                },
+                "period_2_start": {
+                    "description": "\u6642\u6bb5 2 \u958b\u59cb\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 2 \u5df2\u958b\u555f"
+                },
+                "period_3_enabled": {
+                    "description": "\u555f\u7528\u6642\u9593\u6bb5 3\u3002",
+                    "name": "\u6642\u6bb5 3 \u5df2\u555f\u7528"
+                },
+                "period_3_end": {
+                    "description": "\u6642\u6bb5 3 \u7d50\u675f\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 3 \u7d50\u675f"
+                },
+                "period_3_start": {
+                    "description": "\u6642\u6bb5 3 \u958b\u59cb\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 3 \u5df2\u958b\u555f"
+                }
+            },
+            "name": "\u5beb\u5165\u4ea4\u6d41\u5145\u96fb\u6642\u9593"
+        },
+        "write_ac_discharge_times": {
+            "description": "\u5c07\u4ea4\u6d41\u653e\u96fb\u6642\u9593\u6bb5\u5beb\u5165 SPH \u88dd\u7f6e\u3002",
+            "fields": {
+                "device_id": {
+                    "description": "\u8981\u57f7\u884c\u64cd\u4f5c\u7684 Growatt \u88dd\u7f6e\u3002",
+                    "name": "\u88dd\u7f6e"
+                },
+                "discharge_power": {
+                    "description": "\u653e\u96fb\u529f\u7387\u9650\u5236\uff08%\uff09\u3002",
+                    "name": "\u653e\u96fb\u529f\u7387"
+                },
+                "discharge_stop_soc": {
+                    "description": "\u65bc\u5145\u96fb\u72c0\u614b\uff08%\uff09\u6642\u505c\u6b62\u653e\u96fb\u3002",
+                    "name": "\u653e\u96fb\u505c\u6b62 SOC"
+                },
+                "period_1_enabled": {
+                    "description": "\u555f\u7528\u6642\u9593\u6bb5 1\u3002",
+                    "name": "\u6642\u6bb5 1 \u5df2\u555f\u7528"
+                },
+                "period_1_end": {
+                    "description": "\u6642\u6bb5 1 \u7d50\u675f\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 1 \u7d50\u675f"
+                },
+                "period_1_start": {
+                    "description": "\u6642\u6bb5 1 \u958b\u59cb\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 1 \u5df2\u958b\u555f"
+                },
+                "period_2_enabled": {
+                    "description": "\u555f\u7528\u6642\u9593\u6bb5 2\u3002",
+                    "name": "\u6642\u6bb5 2 \u5df2\u555f\u7528"
+                },
+                "period_2_end": {
+                    "description": "\u6642\u6bb5 2 \u7d50\u675f\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 2 \u7d50\u675f"
+                },
+                "period_2_start": {
+                    "description": "\u6642\u6bb5 2 \u958b\u59cb\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 2 \u5df2\u958b\u555f"
+                },
+                "period_3_enabled": {
+                    "description": "\u555f\u7528\u6642\u9593\u6bb5 3\u3002",
+                    "name": "\u6642\u6bb5 3 \u5df2\u555f\u7528"
+                },
+                "period_3_end": {
+                    "description": "\u6642\u6bb5 3 \u7d50\u675f\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 3 \u7d50\u675f"
+                },
+                "period_3_start": {
+                    "description": "\u6642\u6bb5 3 \u958b\u59cb\u6642\u9593\uff08HH:MM \u6216 HH:MM:SS\uff09\u3002",
+                    "name": "\u6642\u6bb5 3 \u5df2\u958b\u555f"
+                }
+            },
+            "name": "\u5beb\u5165\u4ea4\u6d41\u653e\u96fb\u6642\u9593"
+        }
+    },
+    "title": "Growatt \u4f3a\u670d\u5668"
+}

@@ -1,0 +1,226 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Gailua dagoeneko konfiguratuta dago",
+            "cannot_connect": "Konexioak huts egin du"
+        },
+        "step": {
+            "password_auth": {
+                "data": {
+                    "password": "Pasahitza",
+                    "region": "Zerbitzariaren eskualdea",
+                    "username": "Erabiltzaile-izena"
+                },
+                "data_description": {
+                    "password": "Zure Growatt kontuaren pasahitza.",
+                    "username": "Zure Growatt kontuaren posta elektroniko edo erabiltzailea."
+                }
+            },
+            "plant": {
+                "data": {
+                    "plant_id": "Solairua"
+                }
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Pasahitza",
+                    "region": "Zerbitzariaren eskualdea",
+                    "token": "API tokena",
+                    "username": "Erabiltzaile-izena"
+                },
+                "data_description": {
+                    "password": "Zure Growatt kontuaren pasahitza.",
+                    "username": "Zure Growatt kontuaren posta elektroniko edo erabiltzailea."
+                }
+            },
+            "reconfigure": {
+                "data": {
+                    "password": "Pasahitza",
+                    "region": "Zerbitzariaren eskualdea",
+                    "token": "API tokena",
+                    "username": "Erabiltzaile-izena"
+                },
+                "data_description": {
+                    "password": "Zure Growatt kontuaren pasahitza.",
+                    "username": "Zure Growatt kontuaren posta elektroniko edo erabiltzailea."
+                }
+            },
+            "token_auth": {
+                "data": {
+                    "region": "Zerbitzariaren eskualdea",
+                    "token": "API tokena"
+                },
+                "title": "Zure API tokena sartu"
+            },
+            "user": {
+                "menu_options": {
+                    "token_auth": "API tokena (soilik MIN/SPH)"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "inverter_temperature": {
+                "name": "Inbertsorearen tenperatura"
+            },
+            "mix_battery_charge": {
+                "name": "Bateria kargatzen"
+            },
+            "sph_temperature_1": {
+                "name": "1. tenperatura"
+            },
+            "sph_temperature_2": {
+                "name": "2. tenperatura"
+            },
+            "sph_temperature_3": {
+                "name": "3. tenperatura"
+            },
+            "sph_temperature_4": {
+                "name": "4. tenperatura"
+            },
+            "sph_temperature_5": {
+                "name": "5. tenperatura"
+            },
+            "tlx_temperature_1": {
+                "name": "1. tenperatura"
+            },
+            "tlx_temperature_2": {
+                "name": "2. tenperatura"
+            },
+            "tlx_temperature_3": {
+                "name": "3. tenperatura"
+            },
+            "tlx_temperature_5": {
+                "name": "5. tenperatura"
+            },
+            "total_energy_today": {
+                "name": "Gaurko energia"
+            }
+        }
+    },
+    "exceptions": {
+        "api_error": {
+            "message": "Growatt API errorea: {error}"
+        },
+        "api_error_with_code": {
+            "message": "API-aren errorea: {error} (Kodea: {code})"
+        },
+        "device_not_found": {
+            "message": "{device_id} gailua ez da gailuen erregistroan aurkitu."
+        },
+        "device_not_growatt": {
+            "message": "{device_id} gailua ez da Growatt gailua."
+        },
+        "invalid_time_format_end_time": {
+            "message": "'Amaiera ordua' OO:MM edo OO:MM:SS formatoetan izan behar da."
+        },
+        "invalid_time_format_period_end": {
+            "message": "' {period} tartearen amaiera' OO:MM edo OO:MM:SS formatoetan izan behar da."
+        },
+        "invalid_time_format_period_start": {
+            "message": "' {period} tartearen hasiera' OO:MM edo OO:MM:SS formatoetan izan behar da."
+        },
+        "invalid_time_format_start_time": {
+            "message": "'Hasiera ordua' OO:MM edo OO:MM:SS formatoetan izan behar da."
+        },
+        "migration_plant_id_failed": {
+            "message": "Growatt API-tik planta ID-a ebazteak huts egin du"
+        }
+    },
+    "selector": {
+        "region": {
+            "options": {
+                "north_america": "Ipar Amerika"
+            }
+        }
+    },
+    "services": {
+        "read_ac_charge_times": {
+            "fields": {
+                "device_id": {
+                    "name": "Gailua"
+                }
+            }
+        },
+        "read_ac_discharge_times": {
+            "fields": {
+                "device_id": {
+                    "name": "Gailua"
+                }
+            }
+        },
+        "read_time_segments": {
+            "fields": {
+                "device_id": {
+                    "name": "Gailua"
+                }
+            }
+        },
+        "update_time_segment": {
+            "fields": {
+                "device_id": {
+                    "name": "Gailua"
+                },
+                "end_time": {
+                    "description": "Tartearen amaiera ordua (OO:MM formatoan).",
+                    "name": "Amaiera ordua"
+                },
+                "start_time": {
+                    "description": "Tartearen hasiera ordua (OO:MM formatoan).",
+                    "name": "Hasiera ordua"
+                }
+            }
+        },
+        "write_ac_charge_times": {
+            "fields": {
+                "device_id": {
+                    "name": "Gailua"
+                },
+                "period_1_end": {
+                    "description": "1. tartearen amaiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_1_start": {
+                    "description": "1. tartearen hasiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_2_end": {
+                    "description": "2. tartearen amaiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_2_start": {
+                    "description": "2. tartearen hasiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_3_end": {
+                    "description": "3. tartearen amaiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_3_start": {
+                    "description": "3. tartearen hasiera ordua (OO:MM or OO:MM:SS)."
+                }
+            }
+        },
+        "write_ac_discharge_times": {
+            "fields": {
+                "device_id": {
+                    "name": "Gailua"
+                },
+                "period_1_end": {
+                    "description": "1. tartearen amaiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_1_start": {
+                    "description": "1. tartearen hasiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_2_end": {
+                    "description": "2. tartearen amaiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_2_start": {
+                    "description": "2. tartearen hasiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_3_end": {
+                    "description": "3. tartearen amaiera ordua (OO:MM or OO:MM:SS)."
+                },
+                "period_3_start": {
+                    "description": "3. tartearen hasiera ordua (OO:MM or OO:MM:SS)."
+                }
+            }
+        }
+    }
+}

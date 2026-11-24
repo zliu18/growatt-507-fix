@@ -1,0 +1,872 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "no_plants": "Na tomto \u00fa\u010dte neboli n\u00e1jden\u00e9 \u017eiadne rastliny"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165 k serverom Growatt. Skontrolujte si internetov\u00e9 pripojenie a sk\u00faste to znova.",
+            "invalid_auth": "Autentifik\u00e1cia zlyhala. Skontrolujte svoje poverenia a sk\u00faste to znova."
+        },
+        "step": {
+            "password_auth": {
+                "data": {
+                    "password": "Heslo",
+                    "region": "Regi\u00f3n servera",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "data_description": {
+                    "password": "Heslo k v\u00e1\u0161mu \u00fa\u010dtu Growatt.",
+                    "region": "Oblas\u0165 servera, ktor\u00e1 zodpoved\u00e1 umiestneniu v\u00e1\u0161ho \u00fa\u010dtu Growatt.",
+                    "username": "E-mailov\u00e1 adresa alebo pou\u017e\u00edvate\u013esk\u00e9 meno v\u00e1\u0161ho \u00fa\u010dtu Growatt."
+                },
+                "title": "Zadajte svoje prihlasovacie \u00fadaje do Growatt"
+            },
+            "plant": {
+                "data": {
+                    "plant_id": "Rastlina"
+                },
+                "data_description": {
+                    "plant_id": "Zariadenie Growatt (sol\u00e1rne zariadenie) na integr\u00e1ciu."
+                },
+                "title": "Vyberte svoju rastlinu"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Heslo",
+                    "region": "Regi\u00f3n servera",
+                    "token": "API token",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "data_description": {
+                    "password": "Heslo k v\u00e1\u0161mu \u00fa\u010dtu Growatt.",
+                    "region": "Oblas\u0165 servera, ktor\u00e1 zodpoved\u00e1 umiestneniu v\u00e1\u0161ho \u00fa\u010dtu Growatt.",
+                    "token": "Token API pre va\u0161e konto Growatt. M\u00f4\u017eete si ho vygenerova\u0165 prostredn\u00edctvom webov\u00e9ho port\u00e1lu Growatt alebo aplik\u00e1cie ShinePhone.",
+                    "username": "E-mailov\u00e1 adresa alebo pou\u017e\u00edvate\u013esk\u00e9 meno v\u00e1\u0161ho \u00fa\u010dtu Growatt."
+                },
+                "description": "Ak chcete pokra\u010dova\u0165 v pou\u017e\u00edvan\u00ed tejto integr\u00e1cie, znova zadajte svoje prihlasovacie \u00fadaje.",
+                "title": "Op\u00e4tovn\u00e9 overenie pomocou slu\u017eby Growatt"
+            },
+            "reconfigure": {
+                "data": {
+                    "password": "Heslo",
+                    "region": "Regi\u00f3n servera",
+                    "token": "API token",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "data_description": {
+                    "password": "Heslo k v\u00e1\u0161mu \u00fa\u010dtu Growatt.",
+                    "region": "Oblas\u0165 servera, ktor\u00e1 zodpoved\u00e1 umiestneniu v\u00e1\u0161ho \u00fa\u010dtu Growatt.",
+                    "token": "Token API pre va\u0161e konto Growatt. M\u00f4\u017eete si ho vygenerova\u0165 prostredn\u00edctvom webov\u00e9ho port\u00e1lu Growatt alebo aplik\u00e1cie ShinePhone.",
+                    "username": "E-mailov\u00e1 adresa alebo pou\u017e\u00edvate\u013esk\u00e9 meno v\u00e1\u0161ho \u00fa\u010dtu Growatt."
+                },
+                "description": "Ak chcete pokra\u010dova\u0165 v pou\u017e\u00edvan\u00ed tejto integr\u00e1cie, aktualizujte svoje poverenia.",
+                "title": "Rekonfigur\u00e1cia Growatt"
+            },
+            "token_auth": {
+                "data": {
+                    "region": "Regi\u00f3n servera",
+                    "token": "API token"
+                },
+                "data_description": {
+                    "region": "Oblas\u0165 servera, ktor\u00e1 zodpoved\u00e1 umiestneniu v\u00e1\u0161ho \u00fa\u010dtu Growatt.",
+                    "token": "Token API pre va\u0161e konto Growatt. M\u00f4\u017eete si ho vygenerova\u0165 prostredn\u00edctvom webov\u00e9ho port\u00e1lu Growatt alebo aplik\u00e1cie ShinePhone."
+                },
+                "description": "Tokenov\u00e9 overovanie je podporovan\u00e9 len pre zariadenia MIN/SPH. V pr\u00edpade in\u00fdch typov zariaden\u00ed pou\u017eite overenie pomocou pou\u017e\u00edvate\u013esk\u00e9ho mena/hesla.",
+                "title": "Zadajte svoj token API"
+            },
+            "user": {
+                "description": "Pozn\u00e1mka: Overovanie pomocou tokenu je v s\u00fa\u010dasnosti podporovan\u00e9 len pre zariadenia MIN/SPH. Pre ostatn\u00e9 typy zariaden\u00ed pou\u017eite overenie pomocou pou\u017e\u00edvate\u013esk\u00e9ho mena/hesla.",
+                "menu_options": {
+                    "password_auth": "Pou\u017e\u00edvate\u013esk\u00e9 meno/heslo",
+                    "token_auth": "Token API (iba MIN/SPH)"
+                },
+                "title": "V\u00fdber met\u00f3dy overovania"
+            }
+        }
+    },
+    "entity": {
+        "number": {
+            "battery_charge_power_limit": {
+                "name": "Limit v\u00fdkonu nab\u00edjania bat\u00e9rie"
+            },
+            "battery_charge_soc_limit": {
+                "name": "Limit nabitia bat\u00e9rie SOC"
+            },
+            "battery_discharge_power_limit": {
+                "name": "Limit vyb\u00edjacieho v\u00fdkonu bat\u00e9rie"
+            },
+            "battery_discharge_soc_limit_off_grid": {
+                "name": "Limit vybitia bat\u00e9rie SOC (mimo siete)"
+            },
+            "battery_discharge_soc_limit_on_grid": {
+                "name": "Limit vybitia bat\u00e9rie SOC (v sieti)"
+            }
+        },
+        "sensor": {
+            "inverter_amperage_input_1": {
+                "name": "Vstup 1 pr\u00fad"
+            },
+            "inverter_amperage_input_2": {
+                "name": "Vstup 2 pr\u00fad"
+            },
+            "inverter_amperage_input_3": {
+                "name": "Vstup 3 pr\u00fad"
+            },
+            "inverter_current_reactive_wattage": {
+                "name": "Jalov\u00fd pr\u00edkon"
+            },
+            "inverter_current_wattage": {
+                "name": "V\u00fdstupn\u00fd v\u00fdkon"
+            },
+            "inverter_energy_today": {
+                "name": "Energia dnes"
+            },
+            "inverter_energy_total": {
+                "name": "Energetick\u00fd v\u00fdkon po\u010das celej \u017eivotnosti"
+            },
+            "inverter_frequency": {
+                "name": "AC frekvencia"
+            },
+            "inverter_internal_wattage": {
+                "name": "Intern\u00fd pr\u00edkon"
+            },
+            "inverter_ipm_temperature": {
+                "name": "Inteligentn\u00e9 riadenie teploty nap\u00e1jania"
+            },
+            "inverter_reactive_amperage": {
+                "name": "Jalov\u00fd pr\u00fad"
+            },
+            "inverter_reactive_voltage": {
+                "name": "Jalov\u00e9 nap\u00e4tie"
+            },
+            "inverter_temperature": {
+                "name": "Teplota meni\u010da"
+            },
+            "inverter_voltage_input_1": {
+                "name": "Vstup 1 Nap\u00e4tie"
+            },
+            "inverter_voltage_input_2": {
+                "name": "Vstup 2 Nap\u00e4tie"
+            },
+            "inverter_voltage_input_3": {
+                "name": "Vstup 3 Nap\u00e4tie"
+            },
+            "inverter_wattage_input_1": {
+                "name": "Vstup 1 pr\u00edkon"
+            },
+            "inverter_wattage_input_2": {
+                "name": "Vstup 2 pr\u00edkon"
+            },
+            "inverter_wattage_input_3": {
+                "name": "Vstup 3 pr\u00edkon"
+            },
+            "mix_battery_charge": {
+                "name": "Nab\u00edjanie bat\u00e9rie"
+            },
+            "mix_battery_charge_lifetime": {
+                "name": "Celo\u017eivotne nabit\u00e1 bat\u00e9ria"
+            },
+            "mix_battery_charge_today": {
+                "name": "Bat\u00e9ria dnes nabit\u00e1"
+            },
+            "mix_battery_discharge_kw": {
+                "name": "Vyb\u00edjanie bat\u00e9rie kW"
+            },
+            "mix_battery_discharge_lifetime": {
+                "name": "\u017divotnos\u0165 vybitej bat\u00e9rie"
+            },
+            "mix_battery_discharge_today": {
+                "name": "Bat\u00e9ria dnes vybit\u00e1"
+            },
+            "mix_battery_discharge_w": {
+                "name": "Vyb\u00edjanie bat\u00e9rie W"
+            },
+            "mix_battery_voltage": {
+                "name": "Nap\u00e4tie bat\u00e9rie"
+            },
+            "mix_export_to_grid": {
+                "name": "Dod\u00e1vka do siete"
+            },
+            "mix_export_to_grid_lifetime": {
+                "name": "Dod\u00e1vka do siete za dobu \u017eivotnosti"
+            },
+            "mix_export_to_grid_today": {
+                "name": "Dod\u00e1vka do siete dnes"
+            },
+            "mix_grid_voltage": {
+                "name": "Sie\u0165ov\u00e9 nap\u00e4tie"
+            },
+            "mix_import_from_grid": {
+                "name": "Odber zo siete"
+            },
+            "mix_import_from_grid_today": {
+                "name": "Odber zo siete dnes (z\u00e1\u0165a\u017e)"
+            },
+            "mix_import_from_grid_today_combined": {
+                "name": "Odber zo siete dnes (z\u00e1\u0165a\u017e + nab\u00edjanie)"
+            },
+            "mix_last_update": {
+                "name": "Posledn\u00e1 aktualiz\u00e1cia \u00fadajov"
+            },
+            "mix_load_consumption": {
+                "name": "Spotreba z\u00e1\u0165a\u017ee"
+            },
+            "mix_load_consumption_battery_today": {
+                "name": "Spotreba z\u00e1\u0165a\u017ee dnes (bat\u00e9ria)"
+            },
+            "mix_load_consumption_lifetime": {
+                "name": "Spotreba po\u010das celej \u017eivotnosti"
+            },
+            "mix_load_consumption_solar_today": {
+                "name": "Spotreba z\u00e1\u0165a\u017ee dnes (sol\u00e1rna energia)"
+            },
+            "mix_load_consumption_today": {
+                "name": "Spotreba z\u00e1\u0165a\u017ee dnes"
+            },
+            "mix_load_consumption_total": {
+                "name": "Celkov\u00e1 spotreba za\u0165a\u017eenia po\u010das celej \u017eivotnosti"
+            },
+            "mix_pv1_voltage": {
+                "name": "PV1 nap\u00e4tie"
+            },
+            "mix_pv2_voltage": {
+                "name": "PV2 nap\u00e4tie"
+            },
+            "mix_self_consumption_today": {
+                "name": "Vlastn\u00e1 spotreba dnes (sol\u00e1rna energia + bat\u00e9ria)"
+            },
+            "mix_solar_generation_lifetime": {
+                "name": "Sol\u00e1rna energia po\u010das celej \u017eivotnosti"
+            },
+            "mix_solar_generation_today": {
+                "name": "Slne\u010dn\u00e1 energia dnes"
+            },
+            "mix_statement_of_charge": {
+                "name": "Stav nabitia"
+            },
+            "mix_system_production_today": {
+                "name": "Dne\u0161n\u00e1 v\u00fdroba syst\u00e9mu (vlastn\u00e1 spotreba + export)"
+            },
+            "mix_wattage_pv_1": {
+                "name": "FV1 pr\u00edkon"
+            },
+            "mix_wattage_pv_2": {
+                "name": "FV2 pr\u00edkon"
+            },
+            "mix_wattage_pv_all": {
+                "name": "V\u0161etky FV pr\u00edkony"
+            },
+            "sph_grid_frequency": {
+                "name": "AC frekvencia"
+            },
+            "sph_temperature_1": {
+                "name": "Teplota 1"
+            },
+            "sph_temperature_2": {
+                "name": "Teplota 2"
+            },
+            "sph_temperature_3": {
+                "name": "Teplota 3"
+            },
+            "sph_temperature_4": {
+                "name": "Teplota 4"
+            },
+            "sph_temperature_5": {
+                "name": "Teplota 5"
+            },
+            "storage_ac_input_frequency_out": {
+                "name": "AC vstupn\u00e1 frekvencia"
+            },
+            "storage_ac_output_frequency": {
+                "name": "AC v\u00fdstupn\u00e1 frekvencia"
+            },
+            "storage_battery_percentage": {
+                "name": "Percento bat\u00e9rie"
+            },
+            "storage_battery_voltage": {
+                "name": "Nap\u00e4tie bat\u00e9rie"
+            },
+            "storage_charge_storage_lifetime": {
+                "name": "\u017divotnos\u0165 ulo\u017een\u00fdch nabit\u00fdch"
+            },
+            "storage_charge_today": {
+                "name": "Nab\u00edjanie dnes"
+            },
+            "storage_current_1": {
+                "name": "PV1 pr\u00fad do \u00falo\u017eiska"
+            },
+            "storage_current_2": {
+                "name": "PV2 pr\u00fad do \u00falo\u017eiska"
+            },
+            "storage_current_pv": {
+                "name": "Sol\u00e1rny nab\u00edjac\u00ed pr\u00fad"
+            },
+            "storage_grid_amperage_input": {
+                "name": "Nab\u00edjac\u00ed pr\u00fad siete"
+            },
+            "storage_grid_charged_lifetime": {
+                "name": "Dobitie zo siete za dobu \u017eivotnosti"
+            },
+            "storage_grid_charged_today": {
+                "name": "Sie\u0165 dnes nabit\u00e1"
+            },
+            "storage_grid_discharge_lifetime": {
+                "name": "Vybitie zo siete za dobu \u017eivotnosti"
+            },
+            "storage_grid_discharge_today": {
+                "name": "Sie\u0165 dnes vybit\u00e1"
+            },
+            "storage_grid_out_current": {
+                "name": "Pr\u00fad zo siete"
+            },
+            "storage_grid_voltage": {
+                "name": "Vstupn\u00e9 nap\u00e4tie AC"
+            },
+            "storage_import_from_grid": {
+                "name": "Odber zo siete"
+            },
+            "storage_import_from_grid_today": {
+                "name": "Odber zo siete dnes"
+            },
+            "storage_import_from_grid_total": {
+                "name": "Odber zo siete spolu"
+            },
+            "storage_load_consumption": {
+                "name": "Spotreba z\u00e1\u0165a\u017ee"
+            },
+            "storage_load_consumption_lifetime": {
+                "name": "Spotreba po\u010das celej \u017eivotnosti"
+            },
+            "storage_load_consumption_solar_storage": {
+                "name": "Spotreba z\u00e1\u0165a\u017ee (sol\u00e1rne + \u00falo\u017eisko)"
+            },
+            "storage_load_consumption_today": {
+                "name": "Spotreba z\u00e1\u0165a\u017ee dnes"
+            },
+            "storage_load_percentage": {
+                "name": "Percento za\u0165a\u017eenia"
+            },
+            "storage_output_voltage": {
+                "name": "V\u00fdstupn\u00e9 nap\u00e4tie"
+            },
+            "storage_power_flow": {
+                "name": "Nab\u00edjanie/vyb\u00edjanie \u00falo\u017eiska(-ve)"
+            },
+            "storage_pv_charging_voltage": {
+                "name": "Nab\u00edjacie nap\u00e4tie PV1"
+            },
+            "storage_pv_charging_voltage_2": {
+                "name": "Nab\u00edjacie nap\u00e4tie PV2"
+            },
+            "storage_solar_output_lifetime": {
+                "name": "Sol\u00e1rny v\u00fdkon po\u010das celej \u017eivotnosti"
+            },
+            "storage_solar_output_today": {
+                "name": "Sol\u00e1rny v\u00fdkon dnes"
+            },
+            "storage_solar_production": {
+                "name": "V\u00fdroba sol\u00e1rnej energie (PV1)"
+            },
+            "storage_solar_production_2": {
+                "name": "V\u00fdroba sol\u00e1rnej energie (PV2)"
+            },
+            "storage_storage_production_lifetime": {
+                "name": "V\u00fdroba \u00falo\u017eiska po\u010das celej \u017eivotnosti"
+            },
+            "storage_storage_production_today": {
+                "name": "Dne\u0161n\u00e1 v\u00fdroba \u00falo\u017e\u00edsk"
+            },
+            "tlx_all_batteries_charge_today": {
+                "name": "V\u0161etky bat\u00e9rie s\u00fa dnes nabit\u00e9"
+            },
+            "tlx_all_batteries_charge_total": {
+                "name": "Celkov\u00e1 \u017eivotnos\u0165 v\u0161etk\u00fdch nabit\u00fdch bat\u00e9ri\u00ed"
+            },
+            "tlx_all_batteries_discharge_today": {
+                "name": "V\u0161etky bat\u00e9rie s\u00fa dnes vybit\u00e9"
+            },
+            "tlx_all_batteries_discharge_total": {
+                "name": "Celkov\u00e1 \u017eivotnos\u0165 v\u0161etk\u00fdch vybit\u00fdch bat\u00e9ri\u00ed"
+            },
+            "tlx_amperage_input_1": {
+                "name": "Vstup 1 pr\u00fad"
+            },
+            "tlx_amperage_input_2": {
+                "name": "Vstup 2 pr\u00fad"
+            },
+            "tlx_amperage_input_3": {
+                "name": "Vstup 3 pr\u00fad"
+            },
+            "tlx_amperage_input_4": {
+                "name": "Vstup 4 pr\u00fad"
+            },
+            "tlx_batteries_charged_from_grid_today": {
+                "name": "Dobitie bat\u00e9rie zo siete dnes"
+            },
+            "tlx_batteries_charged_from_grid_total": {
+                "name": "Dobitie bat\u00e9rie zo siete za dobu \u017eivotnosti"
+            },
+            "tlx_battery_1_charge_total": {
+                "name": "Celkov\u00e1 \u017eivotnos\u0165 bat\u00e9rie 1 nabitia"
+            },
+            "tlx_battery_1_charge_w": {
+                "name": "Bat\u00e9ria 1 nab\u00edjacie W"
+            },
+            "tlx_battery_1_discharge_total": {
+                "name": "Celkov\u00e1 \u017eivotnos\u0165 bat\u00e9rie 1 je vybit\u00e1"
+            },
+            "tlx_battery_1_discharge_w": {
+                "name": "Bat\u00e9ria 1 vyb\u00edjacie W"
+            },
+            "tlx_battery_2_charge_total": {
+                "name": "Celkov\u00e1 \u017eivotnos\u0165 bat\u00e9rie 2 nabitia"
+            },
+            "tlx_battery_2_charge_w": {
+                "name": "Bat\u00e9ria 2 nab\u00edjacie W"
+            },
+            "tlx_battery_2_discharge_total": {
+                "name": "Celkov\u00e1 \u017eivotnos\u0165 bat\u00e9rie 2 je vybit\u00e1"
+            },
+            "tlx_battery_2_discharge_w": {
+                "name": "Bat\u00e9ria 2 vyb\u00edjacie W"
+            },
+            "tlx_current_wattage": {
+                "name": "V\u00fdstupn\u00fd v\u00fdkon"
+            },
+            "tlx_energy_today": {
+                "name": "Energia dnes"
+            },
+            "tlx_energy_today_input_1": {
+                "name": "Energia dnes vstup 1"
+            },
+            "tlx_energy_today_input_2": {
+                "name": "Energia dnes vstup 2"
+            },
+            "tlx_energy_today_input_3": {
+                "name": "Energia dnes vstup 3"
+            },
+            "tlx_energy_today_input_4": {
+                "name": "Energia dnes vstup 4"
+            },
+            "tlx_energy_total": {
+                "name": "Energetick\u00fd v\u00fdkon po\u010das celej \u017eivotnosti"
+            },
+            "tlx_energy_total_input_1": {
+                "name": "Celkov\u00fd energetick\u00fd pr\u00edkon po\u010das celej \u017eivotnosti vstup 1"
+            },
+            "tlx_energy_total_input_2": {
+                "name": "Celkov\u00fd energetick\u00fd pr\u00edkon po\u010das celej \u017eivotnosti vstup 2"
+            },
+            "tlx_energy_total_input_3": {
+                "name": "Celkov\u00fd energetick\u00fd pr\u00edkon po\u010das celej \u017eivotnosti vstup 3"
+            },
+            "tlx_energy_total_input_4": {
+                "name": "Celkov\u00fd energetick\u00fd pr\u00edkon po\u010das celej \u017eivotnosti vstup 4"
+            },
+            "tlx_export_to_grid_today": {
+                "name": "Dod\u00e1vka do siete dnes"
+            },
+            "tlx_export_to_grid_total": {
+                "name": "Celkov\u00e1 dod\u00e1vka do siete za dobu \u017eivotnosti"
+            },
+            "tlx_frequency": {
+                "name": "AC frekvencia"
+            },
+            "tlx_import_from_grid_today": {
+                "name": "Odber zo siete dnes"
+            },
+            "tlx_import_from_grid_total": {
+                "name": "Dod\u00e1vka zo siete za dobu \u017eivotnosti"
+            },
+            "tlx_internal_wattage": {
+                "name": "Intern\u00fd pr\u00edkon"
+            },
+            "tlx_load_consumption_today": {
+                "name": "Spotreba z\u00e1\u0165a\u017ee dnes"
+            },
+            "tlx_p_self": {
+                "name": "Vlastn\u00fd v\u00fdkon"
+            },
+            "tlx_p_system": {
+                "name": "V\u00fdkon syst\u00e9mu"
+            },
+            "tlx_pac_to_grid_total": {
+                "name": "Exportovan\u00e1 energia"
+            },
+            "tlx_pac_to_local_load": {
+                "name": "V\u00fdkon miestnej z\u00e1\u0165a\u017ee"
+            },
+            "tlx_pac_to_user_total": {
+                "name": "Import energie"
+            },
+            "tlx_reactive_voltage": {
+                "name": "Jalov\u00e9 nap\u00e4tie"
+            },
+            "tlx_self_consumption_today": {
+                "name": "Vlastn\u00e1 spotreba dnes"
+            },
+            "tlx_self_consumption_total": {
+                "name": "Celo\u017eivotn\u00e1 vlastn\u00e1 spotreba"
+            },
+            "tlx_solar_generation_today": {
+                "name": "Slne\u010dn\u00e1 energia dnes"
+            },
+            "tlx_solar_generation_total": {
+                "name": "Celkov\u00e1 slne\u010dn\u00e1 energia po cel\u00fa dobu \u017eivotnosti"
+            },
+            "tlx_statement_of_charge": {
+                "name": "Stav nabitia (SoC)"
+            },
+            "tlx_system_production_today": {
+                "name": "V\u00fdroba syst\u00e9mu dnes"
+            },
+            "tlx_system_production_total": {
+                "name": "Celo\u017eivotn\u00e1 v\u00fdroba syst\u00e9mu"
+            },
+            "tlx_temperature_1": {
+                "name": "Teplota 1"
+            },
+            "tlx_temperature_2": {
+                "name": "Teplota 2"
+            },
+            "tlx_temperature_3": {
+                "name": "Teplota 3"
+            },
+            "tlx_temperature_4": {
+                "name": "Teplota 4"
+            },
+            "tlx_temperature_5": {
+                "name": "Teplota 5"
+            },
+            "tlx_voltage_input_1": {
+                "name": "Vstup 1 Nap\u00e4tie"
+            },
+            "tlx_voltage_input_2": {
+                "name": "Vstup 2 Nap\u00e4tie"
+            },
+            "tlx_voltage_input_3": {
+                "name": "Vstup 3 Nap\u00e4tie"
+            },
+            "tlx_voltage_input_4": {
+                "name": "Vstup 4 Nap\u00e4tie"
+            },
+            "tlx_wattage_input_1": {
+                "name": "Vstup 1 pr\u00edkon"
+            },
+            "tlx_wattage_input_2": {
+                "name": "Vstup 2 pr\u00edkon"
+            },
+            "tlx_wattage_input_3": {
+                "name": "Vstup 3 pr\u00edkon"
+            },
+            "tlx_wattage_input_4": {
+                "name": "Vstup 4 pr\u00edkon"
+            },
+            "total_energy_output": {
+                "name": "Energetick\u00fd v\u00fdkon po\u010das celej \u017eivotnosti"
+            },
+            "total_energy_today": {
+                "name": "Energia dnes"
+            },
+            "total_maximum_output": {
+                "name": "Maxim\u00e1lny v\u00fdkon"
+            },
+            "total_money_today": {
+                "name": "Celkov\u00e1 suma pe\u0148az\u00ed dnes"
+            },
+            "total_money_total": {
+                "name": "\u017divotnos\u0165 pe\u0148az\u00ed"
+            },
+            "total_output_power": {
+                "name": "V\u00fdstupn\u00fd v\u00fdkon"
+            }
+        },
+        "switch": {
+            "ac_charge": {
+                "name": "Nab\u00edja\u0165 zo siete"
+            }
+        }
+    },
+    "exceptions": {
+        "api_error": {
+            "message": "Growatt API error: {error}"
+        },
+        "api_error_with_code": {
+            "message": "Chyba API: {error} (K\u00f3d: {code})"
+        },
+        "auth_failed": {
+            "message": "Overenie pre Growatt API zlyhalo: {error}"
+        },
+        "communication_error": {
+            "message": "Chyba pri komunik\u00e1cii s Growatt API: {error}"
+        },
+        "device_not_configured": {
+            "message": "{device_type} zariadenie {serial_number} nie je nakonfigurovan\u00e9 pre akcie."
+        },
+        "device_not_found": {
+            "message": "Zariadenie {device_id} sa nena\u0161lo v registri zariaden\u00ed."
+        },
+        "device_not_growatt": {
+            "message": "Zariadenie {device_id} nie je zariadenie Growatt."
+        },
+        "fetch_data_failed": {
+            "message": "Chyba pri na\u010d\u00edtan\u00ed \u00fadajov z Growatt API: {error}"
+        },
+        "invalid_batt_mode": {
+            "message": "{batt_mode} nie je platn\u00fd re\u017eim bat\u00e9rie. Pr\u00edpustn\u00e9 hodnoty: {allowed_modes}."
+        },
+        "invalid_charge_power": {
+            "message": "'Nab\u00edjac\u00ed v\u00fdkon' mus\u00ed by\u0165 medzi 0 a 100, je {value}."
+        },
+        "invalid_charge_stop_soc": {
+            "message": "'Nab\u00edjanie zastav\u00ed SOC' mus\u00ed by\u0165 medzi 0 a 100, je {value}."
+        },
+        "invalid_credentials": {
+            "message": "Pou\u017e\u00edvate\u013esk\u00e9 meno, heslo alebo URL m\u00f4\u017eu by\u0165 nespr\u00e1vne"
+        },
+        "invalid_discharge_power": {
+            "message": "'Vyb\u00edjac\u00ed v\u00fdkon' mus\u00ed by\u0165 medzi 0 a 100, je {value}."
+        },
+        "invalid_discharge_stop_soc": {
+            "message": "'Vyb\u00edjanie zastav\u00ed SOC' mus\u00ed by\u0165 v rozmedz\u00ed od 0 do 100, je {value}."
+        },
+        "invalid_segment_id": {
+            "message": "'ID segmentu' mus\u00ed by\u0165 medzi 1 a 9, je {segment_id}."
+        },
+        "invalid_time_format_end_time": {
+            "message": "'\u010cas ukon\u010denia' mus\u00ed by\u0165 vo form\u00e1te HH:MM alebo HH:MM:SS."
+        },
+        "invalid_time_format_period_end": {
+            "message": "'Obdobie {period} koniec' mus\u00ed by\u0165 vo form\u00e1te HH:MM alebo HH:MM:SS."
+        },
+        "invalid_time_format_period_start": {
+            "message": "'Obdobie {period} za\u010diatok' mus\u00ed by\u0165 vo form\u00e1te HH:MM alebo HH:MM:SS."
+        },
+        "invalid_time_format_start_time": {
+            "message": "'\u010cas za\u010diatku' mus\u00ed by\u0165 vo form\u00e1te HH:MM alebo HH:MM:SS."
+        },
+        "login_failed": {
+            "message": "Prihl\u00e1senie do Growatt zlyhalo: {message}"
+        },
+        "migration_invalid_plant_id": {
+            "message": "Konfigur\u00e1cia obsahuje neplatn\u00e9 ID zariadenia, prekonfigurujte integr\u00e1ciu."
+        },
+        "migration_missing_credentials": {
+            "message": "V konfigur\u00e1cii ch\u00fdba pou\u017e\u00edvate\u013esk\u00e9 meno alebo heslo, prekonfigurujte integr\u00e1ciu."
+        },
+        "migration_no_plants": {
+            "message": "Pre \u00fa\u010det Growatt sa nena\u0161li \u017eiadne rastliny {username}"
+        },
+        "migration_plant_id_failed": {
+            "message": "Nepodarilo sa rozpozna\u0165 ID zariadenia z Growatt API"
+        },
+        "no_devices_configured": {
+            "message": "Nie {device_type} Zariadenia s overovan\u00edm tokenom s\u00fa nakonfigurovan\u00e9. Vy\u017eaduj\u00fa sa akcie. {device_type} zariadenia s pr\u00edstupom k V1 API."
+        },
+        "rate_limited": {
+            "message": "Growatt API rate limited, bude sa opakova\u0165: {error}"
+        },
+        "token_auth_required": {
+            "message": "T\u00e1to akcia vy\u017eaduje autentifik\u00e1ciu tokenom (V1 API)."
+        },
+        "unknown_auth_type": {
+            "message": "Nezn\u00e1my typ overovania v polo\u017eke konfigur\u00e1cie"
+        }
+    },
+    "selector": {
+        "batt_mode": {
+            "options": {
+                "battery_first": "Najsk\u00f4r bat\u00e9ria",
+                "grid_first": "Najsk\u00f4r sie\u0165",
+                "load_first": "Najsk\u00f4r z\u00e1\u0165a\u017e"
+            }
+        },
+        "region": {
+            "options": {
+                "australia_new_zealand": "Austr\u00e1lia a Nov\u00fd Z\u00e9land",
+                "china": "\u010c\u00edna",
+                "era_server": "Era server (Atess Power)",
+                "north_america": "Severn\u00e1 Amerika",
+                "other_regions": "Ostatn\u00e9 regi\u00f3ny",
+                "smten_server": "SMTEN server"
+            }
+        }
+    },
+    "services": {
+        "read_ac_charge_times": {
+            "description": "\u010c\u00edta \u010dasy nab\u00edjania AC pr\u00fadom zo zariadenia SPH.",
+            "fields": {
+                "device_id": {
+                    "description": "Zariadenie Growatt, na ktorom sa m\u00e1 vykona\u0165 akcia.",
+                    "name": "Zariadenie"
+                }
+            },
+            "name": "\u010c\u00edtanie \u010dasov nab\u00edjania AC"
+        },
+        "read_ac_discharge_times": {
+            "description": "\u010c\u00edtanie \u010dasov\u00fdch \u00fasekov vyb\u00edjania striedav\u00e9ho pr\u00fadu zo zariadenia SPH.",
+            "fields": {
+                "device_id": {
+                    "description": "Zariadenie Growatt, na ktorom sa m\u00e1 vykona\u0165 akcia.",
+                    "name": "Zariadenie"
+                }
+            },
+            "name": "\u010c\u00edtanie \u010dasov vyb\u00edjania striedav\u00e9ho pr\u00fadu"
+        },
+        "read_time_segments": {
+            "description": "\u010c\u00edtanie v\u0161etk\u00fdch \u010dasov\u00fdch segmentov z podporovan\u00e9ho meni\u010da.",
+            "fields": {
+                "device_id": {
+                    "description": "Zariadenie Growatt, na ktorom sa m\u00e1 vykona\u0165 akcia.",
+                    "name": "Zariadenie"
+                }
+            },
+            "name": "\u010c\u00edtanie \u010dasov\u00fdch \u00fasekov"
+        },
+        "update_time_segment": {
+            "description": "Aktualizuje \u010dasov\u00fd segment pre podporovan\u00e9 meni\u010de.",
+            "fields": {
+                "batt_mode": {
+                    "description": "Re\u017eim prev\u00e1dzky bat\u00e9rie pre tento \u010dasov\u00fd \u00fasek.",
+                    "name": "Re\u017eim bat\u00e9rie"
+                },
+                "device_id": {
+                    "description": "Zariadenie Growatt, na ktorom sa m\u00e1 vykona\u0165 akcia.",
+                    "name": "Zariadenie"
+                },
+                "enabled": {
+                    "description": "\u010ci je tento \u010dasov\u00fd \u00fasek akt\u00edvny.",
+                    "name": "Povolen\u00e9"
+                },
+                "end_time": {
+                    "description": "\u010cas ukon\u010denia segmentu (form\u00e1t HH:MM).",
+                    "name": "\u010cas ukon\u010denia"
+                },
+                "segment_id": {
+                    "description": "ID \u010dasov\u00e9ho segmentu (1-9).",
+                    "name": "ID segmentu"
+                },
+                "start_time": {
+                    "description": "\u010cas za\u010diatku segmentu (form\u00e1t HH:MM).",
+                    "name": "\u010cas za\u010diatku"
+                }
+            },
+            "name": "Aktualiz\u00e1cia \u010dasov\u00e9ho segmentu"
+        },
+        "write_ac_charge_times": {
+            "description": "Zap\u00ed\u0161e \u010dasov\u00e9 \u00faseky nab\u00edjania striedav\u00fdm pr\u00fadom do zariadenia SPH.",
+            "fields": {
+                "charge_power": {
+                    "description": "Limit nab\u00edjacieho v\u00fdkonu (%).",
+                    "name": "Nab\u00edjac\u00ed v\u00fdkon"
+                },
+                "charge_stop_soc": {
+                    "description": "Zastavi\u0165 nab\u00edjanie pri tomto stave nabitia (%).",
+                    "name": "Zastavenie nab\u00edjania SOC"
+                },
+                "device_id": {
+                    "description": "Zariadenie Growatt, na ktorom sa m\u00e1 vykona\u0165 akcia.",
+                    "name": "Zariadenie"
+                },
+                "mains_enabled": {
+                    "description": "Povo\u013ete nab\u00edjanie zo siete (AC).",
+                    "name": "Nab\u00edjanie zo siete povolen\u00e9"
+                },
+                "period_1_enabled": {
+                    "description": "Povolenie \u010dasov\u00e9ho obdobia 1.",
+                    "name": "Obdobie 1 povolen\u00e9"
+                },
+                "period_1_end": {
+                    "description": "\u010cas ukon\u010denia obdobia 1 (HH:MM alebo HH:MM:SS).",
+                    "name": "Koniec obdobia 1"
+                },
+                "period_1_start": {
+                    "description": "\u010cas za\u010diatku obdobia 1 (HH:MM alebo HH:MM:SS).",
+                    "name": "Za\u010diatok obdobia 1"
+                },
+                "period_2_enabled": {
+                    "description": "Povolenie \u010dasov\u00e9ho obdobia 2.",
+                    "name": "Obdobie 2 povolen\u00e9"
+                },
+                "period_2_end": {
+                    "description": "\u010cas ukon\u010denia obdobia 2 (HH:MM alebo HH:MM:SS).",
+                    "name": "Koniec obdobia 2"
+                },
+                "period_2_start": {
+                    "description": "\u010cas za\u010diatku obdobia 2 (HH:MM alebo HH:MM:SS).",
+                    "name": "Za\u010diatok obdobia 2"
+                },
+                "period_3_enabled": {
+                    "description": "Povolenie \u010dasov\u00e9ho obdobia 3.",
+                    "name": "Obdobie 3 povolen\u00e9"
+                },
+                "period_3_end": {
+                    "description": "\u010cas ukon\u010denia obdobia 3 (HH:MM alebo HH:MM:SS).",
+                    "name": "Koniec obdobia 3"
+                },
+                "period_3_start": {
+                    "description": "\u010cas za\u010diatku obdobia 3 (HH:MM alebo HH:MM:SS).",
+                    "name": "Za\u010diatok obdobia 3"
+                }
+            },
+            "name": "Zap\u00ed\u0161e si \u010dasy nab\u00edjania striedav\u00fdm pr\u00fadom"
+        },
+        "write_ac_discharge_times": {
+            "description": "Zap\u00ed\u0161e \u010dasov\u00e9 \u00faseky vyb\u00edjania striedav\u00e9ho pr\u00fadu do zariadenia SPH.",
+            "fields": {
+                "device_id": {
+                    "description": "Zariadenie Growatt, na ktorom sa m\u00e1 vykona\u0165 akcia.",
+                    "name": "Zariadenie"
+                },
+                "discharge_power": {
+                    "description": "Limit vyb\u00edjacieho v\u00fdkonu (%).",
+                    "name": "Vyb\u00edjac\u00ed v\u00fdkon"
+                },
+                "discharge_stop_soc": {
+                    "description": "Zastavi\u0165 vyb\u00edjanie pri tomto stave nabitia (%).",
+                    "name": "Zastavenie vyb\u00edjania SOC"
+                },
+                "period_1_enabled": {
+                    "description": "Povolenie \u010dasov\u00e9ho obdobia 1.",
+                    "name": "Obdobie 1 povolen\u00e9"
+                },
+                "period_1_end": {
+                    "description": "\u010cas ukon\u010denia obdobia 1 (HH:MM alebo HH:MM:SS).",
+                    "name": "Koniec obdobia 1"
+                },
+                "period_1_start": {
+                    "description": "\u010cas za\u010diatku obdobia 1 (HH:MM alebo HH:MM:SS).",
+                    "name": "Za\u010diatok obdobia 1"
+                },
+                "period_2_enabled": {
+                    "description": "Povolenie \u010dasov\u00e9ho obdobia 2.",
+                    "name": "Obdobie 2 povolen\u00e9"
+                },
+                "period_2_end": {
+                    "description": "\u010cas ukon\u010denia obdobia 2 (HH:MM alebo HH:MM:SS).",
+                    "name": "Koniec obdobia 2"
+                },
+                "period_2_start": {
+                    "description": "\u010cas za\u010diatku obdobia 2 (HH:MM alebo HH:MM:SS).",
+                    "name": "Za\u010diatok obdobia 2"
+                },
+                "period_3_enabled": {
+                    "description": "Povolenie \u010dasov\u00e9ho obdobia 3.",
+                    "name": "Obdobie 3 povolen\u00e9"
+                },
+                "period_3_end": {
+                    "description": "\u010cas ukon\u010denia obdobia 3 (HH:MM alebo HH:MM:SS).",
+                    "name": "Koniec obdobia 3"
+                },
+                "period_3_start": {
+                    "description": "\u010cas za\u010diatku obdobia 3 (HH:MM alebo HH:MM:SS).",
+                    "name": "Za\u010diatok obdobia 3"
+                }
+            },
+            "name": "Zap\u00ed\u0161e \u010dasy vyb\u00edjania AC"
+        }
+    },
+    "title": "Server Growatt"
+}

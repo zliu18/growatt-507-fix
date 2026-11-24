@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html data-name="dumpLogin">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Login Page</title>
+	<script type="text/javascript" src="/javaScript/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/javaScript/js/jquery.cookie_i18n.js"></script>
+    <script type="text/javascript">
+        var leftSeconds = 3;
+        var timeIntervalId;
+        $(function() {
+			timeIntervalId=setInterval("CountDown()", 1000);
+        });
+        function CountDown() {
+            if(leftSeconds<=0){
+                clearInterval(timeIntervalId);
+                document.getElementById('login').click();
+            }else{
+                leftSeconds--;
+                $("#msg").html("Page In "+leftSeconds+" Seconds After The Jump To The Login Page.");
+            }
+        }
+    </script>
+</head>
+<body>
+<br/>
+	<center>
+		Note: Dear User, You Have Not Login To The System, Skip Login Page Login..<br><br>
+		<div id="msg">Page In 3 Seconds After The Jump To The Login Page</div>
+		<br>
+		<a href="/login" target="_top" id="login">Login Page</a>
+	</center>
+</body>
+</html>

@@ -1,0 +1,848 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O dispositivo j\u00e1 est\u00e1 configurado",
+            "cannot_connect": "Falha ao conectar",
+            "no_plants": "Nenhuma usina encontrada na conta"
+        },
+        "error": {
+            "cannot_connect": "N\u00e3o \u00e9 poss\u00edvel conectar aos servidores da Growatt. Verifique sua conex\u00e3o com a internet e tente novamente.",
+            "invalid_auth": "A autentica\u00e7\u00e3o falhou. Verifique suas credenciais e tente novamente."
+        },
+        "step": {
+            "password_auth": {
+                "data": {
+                    "password": "Senha",
+                    "region": "Regi\u00e3o do servidor",
+                    "username": "Usu\u00e1rio"
+                },
+                "data_description": {
+                    "password": "A senha da sua conta Growatt.",
+                    "region": "A regi\u00e3o do servidor que corresponde \u00e0 localiza\u00e7\u00e3o da sua conta Growatt.",
+                    "username": "O endere\u00e7o de e-mail ou nome de usu\u00e1rio da sua conta Growatt."
+                },
+                "title": "Insira suas credenciais de login Growatt"
+            },
+            "plant": {
+                "data": {
+                    "plant_id": "Usina"
+                },
+                "data_description": {
+                    "plant_id": "A planta Growatt (instala\u00e7\u00e3o solar) a integrar."
+                },
+                "title": "Selecione sua usina"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Senha",
+                    "region": "Regi\u00e3o do servidor",
+                    "token": "Token da API",
+                    "username": "Usu\u00e1rio"
+                },
+                "data_description": {
+                    "password": "A senha da sua conta Growatt.",
+                    "region": "A regi\u00e3o do servidor que corresponde \u00e0 localiza\u00e7\u00e3o da sua conta Growatt.",
+                    "token": "O token da API para sua conta Growatt. Voc\u00ea pode gerar um pelo portal web da Growatt ou pelo aplicativo ShinePhone.",
+                    "username": "O endere\u00e7o de e-mail ou nome de usu\u00e1rio da sua conta Growatt."
+                },
+                "description": "Insira novamente suas credenciais para continuar usando esta integra\u00e7\u00e3o.",
+                "title": "Reautenticar com Growatt"
+            },
+            "reconfigure": {
+                "data": {
+                    "password": "Senha",
+                    "region": "Regi\u00e3o do servidor",
+                    "token": "Token da API",
+                    "username": "Usu\u00e1rio"
+                },
+                "data_description": {
+                    "password": "A senha da sua conta Growatt.",
+                    "region": "A regi\u00e3o do servidor que corresponde \u00e0 localiza\u00e7\u00e3o da sua conta Growatt.",
+                    "token": "O token da API para sua conta Growatt. Voc\u00ea pode gerar um pelo portal web da Growatt ou pelo aplicativo ShinePhone.",
+                    "username": "O endere\u00e7o de e-mail ou nome de usu\u00e1rio da sua conta Growatt."
+                },
+                "description": "Atualize suas credenciais para continuar usando esta integra\u00e7\u00e3o.",
+                "title": "Reconfigurar Growatt"
+            },
+            "token_auth": {
+                "data": {
+                    "region": "Regi\u00e3o do servidor",
+                    "token": "Token da API"
+                },
+                "data_description": {
+                    "region": "A regi\u00e3o do servidor que corresponde \u00e0 localiza\u00e7\u00e3o da sua conta Growatt.",
+                    "token": "O token da API para sua conta Growatt. Voc\u00ea pode gerar um pelo portal web da Growatt ou pelo aplicativo ShinePhone."
+                },
+                "description": "A autentica\u00e7\u00e3o por token \u00e9 compat\u00edvel apenas com dispositivos MIN/SPH. Para outros tipos de dispositivo, use a autentica\u00e7\u00e3o por nome de usu\u00e1rio/senha.",
+                "title": "Insira seu token da API"
+            },
+            "user": {
+                "description": "Observa\u00e7\u00e3o: a autentica\u00e7\u00e3o por token \u00e9 atualmente compat\u00edvel apenas com dispositivos MIN/SPH. Para outros tipos de dispositivos, use a autentica\u00e7\u00e3o por nome de usu\u00e1rio/senha.",
+                "menu_options": {
+                    "password_auth": "Usu\u00e1rio/senha",
+                    "token_auth": "Token de API (apenas MIN/SPH)"
+                },
+                "title": "Escolha o m\u00e9todo de autentica\u00e7\u00e3o"
+            }
+        }
+    },
+    "entity": {
+        "number": {
+            "battery_charge_power_limit": {
+                "name": "Limite de pot\u00eancia de carga da bateria"
+            },
+            "battery_charge_soc_limit": {
+                "name": "Limite de SOC de carga da bateria"
+            },
+            "battery_discharge_power_limit": {
+                "name": "Limite de pot\u00eancia de descarga da bateria"
+            },
+            "battery_discharge_soc_limit_off_grid": {
+                "name": "Limite de SOC de descarga da bateria (fora da rede)"
+            },
+            "battery_discharge_soc_limit_on_grid": {
+                "name": "Limite de SOC de descarga da bateria (on-grid)"
+            }
+        },
+        "sensor": {
+            "inverter_amperage_input_1": {
+                "name": "Amperagem da entrada 1"
+            },
+            "inverter_amperage_input_2": {
+                "name": "Amperagem da entrada 2"
+            },
+            "inverter_amperage_input_3": {
+                "name": "Amperagem da entrada 3"
+            },
+            "inverter_current_reactive_wattage": {
+                "name": "Pot\u00eancia reativa"
+            },
+            "inverter_current_wattage": {
+                "name": "Pot\u00eancia de sa\u00edda"
+            },
+            "inverter_energy_today": {
+                "name": "Energia hoje"
+            },
+            "inverter_energy_total": {
+                "name": "Produ\u00e7\u00e3o total de energia"
+            },
+            "inverter_frequency": {
+                "name": "Frequ\u00eancia AC"
+            },
+            "inverter_internal_wattage": {
+                "name": "Pot\u00eancia interna"
+            },
+            "inverter_ipm_temperature": {
+                "name": "Temperatura do gerenciamento inteligente de energia"
+            },
+            "inverter_reactive_amperage": {
+                "name": "Amperagem reativa"
+            },
+            "inverter_reactive_voltage": {
+                "name": "Tens\u00e3o reativa"
+            },
+            "inverter_temperature": {
+                "name": "Temperatura do inversor"
+            },
+            "inverter_voltage_input_1": {
+                "name": "Tens\u00e3o da entrada 1"
+            },
+            "inverter_voltage_input_2": {
+                "name": "Tens\u00e3o da entrada 2"
+            },
+            "inverter_voltage_input_3": {
+                "name": "Tens\u00e3o da entrada 3"
+            },
+            "inverter_wattage_input_1": {
+                "name": "Pot\u00eancia da entrada 1"
+            },
+            "inverter_wattage_input_2": {
+                "name": "Pot\u00eancia da entrada 2"
+            },
+            "inverter_wattage_input_3": {
+                "name": "Pot\u00eancia da entrada 3"
+            },
+            "mix_battery_charge": {
+                "name": "Carregamento da bateria"
+            },
+            "mix_battery_charge_lifetime": {
+                "name": "Bateria carregada ao longo da vida \u00fatil"
+            },
+            "mix_battery_charge_today": {
+                "name": "Bateria carregada hoje"
+            },
+            "mix_battery_discharge_kw": {
+                "name": "Bateria descarregando kW"
+            },
+            "mix_battery_discharge_lifetime": {
+                "name": "Bateria descarregada por toda a vida"
+            },
+            "mix_battery_discharge_today": {
+                "name": "Bateria descarregada hoje"
+            },
+            "mix_battery_discharge_w": {
+                "name": "Bateria descarregando W"
+            },
+            "mix_battery_voltage": {
+                "name": "Tens\u00e3o da bateria"
+            },
+            "mix_export_to_grid": {
+                "name": "Exportar para rede"
+            },
+            "mix_export_to_grid_lifetime": {
+                "name": "Exporta\u00e7\u00e3o vital\u00edcia para a rede"
+            },
+            "mix_export_to_grid_today": {
+                "name": "Exporta\u00e7\u00e3o para a rede hoje"
+            },
+            "mix_grid_voltage": {
+                "name": "Tens\u00e3o da rede"
+            },
+            "mix_import_from_grid": {
+                "name": "Importar da rede"
+            },
+            "mix_import_from_grid_today": {
+                "name": "Importar da rede hoje (carga)"
+            },
+            "mix_import_from_grid_today_combined": {
+                "name": "Importar da rede hoje (carga + carregamento)"
+            },
+            "mix_load_consumption": {
+                "name": "Consumo de carga"
+            },
+            "mix_load_consumption_battery_today": {
+                "name": "Consumo de carga hoje (bateria)"
+            },
+            "mix_load_consumption_lifetime": {
+                "name": "Consumo de carga ao longo da vida"
+            },
+            "mix_load_consumption_solar_today": {
+                "name": "Consumo de carga hoje (solar)"
+            },
+            "mix_load_consumption_today": {
+                "name": "Consumo de carga hoje"
+            },
+            "mix_load_consumption_total": {
+                "name": "Consumo de carga total ao longo da vida"
+            },
+            "mix_pv1_voltage": {
+                "name": "Tens\u00e3o PV1"
+            },
+            "mix_pv2_voltage": {
+                "name": "Tens\u00e3o PV2"
+            },
+            "mix_solar_generation_lifetime": {
+                "name": "Energia solar total"
+            },
+            "mix_solar_generation_today": {
+                "name": "Energia solar hoje"
+            },
+            "mix_statement_of_charge": {
+                "name": "Estado de carga"
+            },
+            "mix_system_production_today": {
+                "name": "Produ\u00e7\u00e3o do sistema hoje (autoconsumo + exporta\u00e7\u00e3o)"
+            },
+            "sph_grid_frequency": {
+                "name": "Frequ\u00eancia AC"
+            },
+            "sph_temperature_1": {
+                "name": "Temperatura 1"
+            },
+            "sph_temperature_2": {
+                "name": "Temperatura 2"
+            },
+            "sph_temperature_3": {
+                "name": "Temperatura 3"
+            },
+            "sph_temperature_4": {
+                "name": "Temperatura 4"
+            },
+            "sph_temperature_5": {
+                "name": "Temperatura 5"
+            },
+            "storage_ac_input_frequency_out": {
+                "name": "Frequ\u00eancia de entrada CA"
+            },
+            "storage_battery_percentage": {
+                "name": "Porcentagem da bateria"
+            },
+            "storage_battery_voltage": {
+                "name": "Tens\u00e3o da bateria"
+            },
+            "storage_charge_storage_lifetime": {
+                "name": "Carga armazenada ao longo da vida"
+            },
+            "storage_charge_today": {
+                "name": "Carga de hoje"
+            },
+            "storage_current_1": {
+                "name": "Corrente PV1 para armazenamento"
+            },
+            "storage_current_2": {
+                "name": "Corrente PV2 para armazenamento"
+            },
+            "storage_current_pv": {
+                "name": "Corrente de carga solar"
+            },
+            "storage_grid_amperage_input": {
+                "name": "Corrente de carga da rede"
+            },
+            "storage_grid_charged_lifetime": {
+                "name": "Carga da rede ao longo da vida \u00fatil"
+            },
+            "storage_grid_charged_today": {
+                "name": "Rede carregada hoje"
+            },
+            "storage_grid_discharge_lifetime": {
+                "name": "Descarga da rede na vida \u00fatil"
+            },
+            "storage_grid_discharge_today": {
+                "name": "Rede descarregada hoje"
+            },
+            "storage_grid_out_current": {
+                "name": "Corrente de sa\u00edda para a rede"
+            },
+            "storage_grid_voltage": {
+                "name": "Tens\u00e3o de entrada CA"
+            },
+            "storage_import_from_grid": {
+                "name": "Importar da rede"
+            },
+            "storage_import_from_grid_today": {
+                "name": "Importar da rede hoje"
+            },
+            "storage_import_from_grid_total": {
+                "name": "Total importado da rede"
+            },
+            "storage_load_consumption": {
+                "name": "Consumo de carga"
+            },
+            "storage_load_consumption_lifetime": {
+                "name": "Consumo de carga ao longo da vida"
+            },
+            "storage_load_consumption_solar_storage": {
+                "name": "Consumo de carga (solar + armazenamento)"
+            },
+            "storage_load_consumption_today": {
+                "name": "Consumo de carga hoje"
+            },
+            "storage_load_percentage": {
+                "name": "Porcentagem de carga"
+            },
+            "storage_output_voltage": {
+                "name": "Tens\u00e3o de sa\u00edda"
+            },
+            "storage_power_flow": {
+                "name": "Carregamento/descarregamento de armazenamento (-ve)"
+            },
+            "storage_pv_charging_voltage": {
+                "name": "Tens\u00e3o de carga PV1"
+            },
+            "storage_pv_charging_voltage_2": {
+                "name": "Tens\u00e3o de carga PV2"
+            },
+            "storage_solar_output_lifetime": {
+                "name": "Produ\u00e7\u00e3o solar vital\u00edcia"
+            },
+            "storage_solar_output_today": {
+                "name": "Produ\u00e7\u00e3o solar hoje"
+            },
+            "storage_solar_production": {
+                "name": "Produ\u00e7\u00e3o de energia solar (PV1)"
+            },
+            "storage_solar_production_2": {
+                "name": "Produ\u00e7\u00e3o de energia solar (PV2)"
+            },
+            "storage_storage_production_today": {
+                "name": "Produ\u00e7\u00e3o de armazenamento hoje"
+            },
+            "tlx_all_batteries_charge_today": {
+                "name": "Todas as baterias carregadas hoje"
+            },
+            "tlx_all_batteries_charge_total": {
+                "name": "Vida \u00fatil total de todas as baterias carregadas"
+            },
+            "tlx_all_batteries_discharge_today": {
+                "name": "Todas as baterias descarregadas hoje"
+            },
+            "tlx_all_batteries_discharge_total": {
+                "name": "Vida \u00fatil total de todas as baterias descarregadas"
+            },
+            "tlx_amperage_input_1": {
+                "name": "Amperagem da entrada 1"
+            },
+            "tlx_amperage_input_2": {
+                "name": "Amperagem da entrada 2"
+            },
+            "tlx_amperage_input_3": {
+                "name": "Amperagem da entrada 3"
+            },
+            "tlx_amperage_input_4": {
+                "name": "Amperagem da entrada 4"
+            },
+            "tlx_batteries_charged_from_grid_today": {
+                "name": "Baterias carregadas da rede hoje"
+            },
+            "tlx_batteries_charged_from_grid_total": {
+                "name": "Baterias carregadas da rede ao longo da vida \u00fatil"
+            },
+            "tlx_battery_1_charge_total": {
+                "name": "Vida \u00fatil total da bateria 1 carregada"
+            },
+            "tlx_battery_1_charge_w": {
+                "name": "Bateria 1 carregando W"
+            },
+            "tlx_battery_1_discharge_total": {
+                "name": "Vida \u00fatil total da bateria 1 descarregada"
+            },
+            "tlx_battery_1_discharge_w": {
+                "name": "Bateria 1 descarregando W"
+            },
+            "tlx_battery_2_charge_total": {
+                "name": "Vida \u00fatil total da bateria 2 carregada"
+            },
+            "tlx_battery_2_charge_w": {
+                "name": "Bateria 2 carregando W"
+            },
+            "tlx_battery_2_discharge_total": {
+                "name": "Vida \u00fatil total da bateria 2 descarregada"
+            },
+            "tlx_battery_2_discharge_w": {
+                "name": "Bateria 2 descarregando W"
+            },
+            "tlx_current_wattage": {
+                "name": "Pot\u00eancia de sa\u00edda"
+            },
+            "tlx_energy_today": {
+                "name": "Energia hoje"
+            },
+            "tlx_energy_today_input_1": {
+                "name": "Energia hoje da entrada 1"
+            },
+            "tlx_energy_today_input_2": {
+                "name": "Energia hoje da entrada 2"
+            },
+            "tlx_energy_today_input_3": {
+                "name": "Energia hoje da entrada 3"
+            },
+            "tlx_energy_today_input_4": {
+                "name": "Energia hoje da entrada 4"
+            },
+            "tlx_energy_total": {
+                "name": "Produ\u00e7\u00e3o total de energia"
+            },
+            "tlx_energy_total_input_1": {
+                "name": "Energia total da entrada 1"
+            },
+            "tlx_energy_total_input_2": {
+                "name": "Energia total da entrada 2"
+            },
+            "tlx_energy_total_input_3": {
+                "name": "Energia total da entrada 3"
+            },
+            "tlx_energy_total_input_4": {
+                "name": "Energia total da entrada 4"
+            },
+            "tlx_export_to_grid_today": {
+                "name": "Exporta\u00e7\u00e3o para a rede hoje"
+            },
+            "tlx_export_to_grid_total": {
+                "name": "Exporta\u00e7\u00e3o total vital\u00edcia para a rede"
+            },
+            "tlx_frequency": {
+                "name": "Frequ\u00eancia AC"
+            },
+            "tlx_import_from_grid_today": {
+                "name": "Importar da rede hoje"
+            },
+            "tlx_import_from_grid_total": {
+                "name": "Importa\u00e7\u00e3o total da rede"
+            },
+            "tlx_internal_wattage": {
+                "name": "Pot\u00eancia interna"
+            },
+            "tlx_load_consumption_today": {
+                "name": "Consumo de carga hoje"
+            },
+            "tlx_p_self": {
+                "name": "Pot\u00eancia de autoconsumo"
+            },
+            "tlx_p_system": {
+                "name": "Pot\u00eancia do sistema"
+            },
+            "tlx_pac_to_grid_total": {
+                "name": "Pot\u00eancia de exporta\u00e7\u00e3o"
+            },
+            "tlx_pac_to_local_load": {
+                "name": "Pot\u00eancia da carga local"
+            },
+            "tlx_pac_to_user_total": {
+                "name": "Pot\u00eancia de importa\u00e7\u00e3o"
+            },
+            "tlx_reactive_voltage": {
+                "name": "Tens\u00e3o reativa"
+            },
+            "tlx_self_consumption_today": {
+                "name": "Autoconsumo hoje"
+            },
+            "tlx_self_consumption_total": {
+                "name": "Autoconsumo vital\u00edcio"
+            },
+            "tlx_solar_generation_today": {
+                "name": "Energia solar hoje"
+            },
+            "tlx_solar_generation_total": {
+                "name": "Energia solar total"
+            },
+            "tlx_statement_of_charge": {
+                "name": "Estado de carga (SoC)"
+            },
+            "tlx_system_production_today": {
+                "name": "Produ\u00e7\u00e3o do sistema hoje"
+            },
+            "tlx_system_production_total": {
+                "name": "Produ\u00e7\u00e3o total do sistema"
+            },
+            "tlx_temperature_1": {
+                "name": "Temperatura 1"
+            },
+            "tlx_temperature_2": {
+                "name": "Temperatura 2"
+            },
+            "tlx_temperature_3": {
+                "name": "Temperatura 3"
+            },
+            "tlx_temperature_4": {
+                "name": "Temperatura 4"
+            },
+            "tlx_temperature_5": {
+                "name": "Temperatura 5"
+            },
+            "tlx_voltage_input_1": {
+                "name": "Tens\u00e3o da entrada 1"
+            },
+            "tlx_voltage_input_2": {
+                "name": "Tens\u00e3o da entrada 2"
+            },
+            "tlx_voltage_input_3": {
+                "name": "Tens\u00e3o da entrada 3"
+            },
+            "tlx_voltage_input_4": {
+                "name": "Tens\u00e3o da entrada 4"
+            },
+            "tlx_wattage_input_1": {
+                "name": "Pot\u00eancia da entrada 1"
+            },
+            "tlx_wattage_input_2": {
+                "name": "Pot\u00eancia da entrada 2"
+            },
+            "tlx_wattage_input_3": {
+                "name": "Pot\u00eancia da entrada 3"
+            },
+            "tlx_wattage_input_4": {
+                "name": "Pot\u00eancia da entrada 4"
+            },
+            "total_energy_output": {
+                "name": "Produ\u00e7\u00e3o total de energia"
+            },
+            "total_energy_today": {
+                "name": "Energia hoje"
+            },
+            "total_maximum_output": {
+                "name": "Pot\u00eancia m\u00e1xima"
+            },
+            "total_money_today": {
+                "name": "Total de dinheiro hoje"
+            },
+            "total_money_total": {
+                "name": "Dinheiro (vida \u00fatil)"
+            }
+        },
+        "switch": {
+            "ac_charge": {
+                "name": "Carregar da rede"
+            }
+        }
+    },
+    "exceptions": {
+        "api_error": {
+            "message": "Erro da API Growatt: {error}"
+        },
+        "api_error_with_code": {
+            "message": "Erro de API: {error} (C\u00f3digo: {code})"
+        },
+        "auth_failed": {
+            "message": "Falha na autentica\u00e7\u00e3o para a API Growatt: {error}"
+        },
+        "communication_error": {
+            "message": "Erro ao comunicar com a API do Growatt: {error}"
+        },
+        "device_not_configured": {
+            "message": "O dispositivo {device_type} {serial_number} n\u00e3o est\u00e1 configurado para a\u00e7\u00f5es."
+        },
+        "device_not_found": {
+            "message": "Dispositivo {device_id} n\u00e3o encontrado no registro de dispositivos."
+        },
+        "device_not_growatt": {
+            "message": "O dispositivo {device_id} n\u00e3o \u00e9 um dispositivo Growatt."
+        },
+        "fetch_data_failed": {
+            "message": "Erro ao obter dados da API Growatt: {error}"
+        },
+        "invalid_batt_mode": {
+            "message": "{batt_mode} n\u00e3o \u00e9 um modo de bateria v\u00e1lido. Valores permitidos: {allowed_modes}."
+        },
+        "invalid_charge_power": {
+            "message": "'Pot\u00eancia de carga' deve estar entre 0 e 100, valor recebido: {value}."
+        },
+        "invalid_charge_stop_soc": {
+            "message": "'Charge stop SOC' deve estar entre 0 e 100, foi obtido {value}."
+        },
+        "invalid_credentials": {
+            "message": "O nome de usu\u00e1rio, a senha ou a URL podem estar incorretos"
+        },
+        "invalid_discharge_power": {
+            "message": "'Pot\u00eancia de descarga' deve estar entre 0 e 100, valor recebido: {value}."
+        },
+        "invalid_discharge_stop_soc": {
+            "message": "'SOC de parada de descarga' deve estar entre 0 e 100, obtido {value}."
+        },
+        "invalid_segment_id": {
+            "message": "'ID do segmento' deve estar entre 1 e 9, obtido {segment_id}."
+        },
+        "invalid_time_format_end_time": {
+            "message": "'Hora de t\u00e9rmino' deve estar no formato HH:MM ou HH:MM:SS."
+        },
+        "invalid_time_format_period_end": {
+            "message": "'Fim do per\u00edodo {period}' deve estar no formato HH:MM ou HH:MM:SS."
+        },
+        "invalid_time_format_period_start": {
+            "message": "'In\u00edcio do per\u00edodo {period}' deve estar no formato HH:MM ou HH:MM:SS."
+        },
+        "invalid_time_format_start_time": {
+            "message": "'Hora de in\u00edcio' deve estar no formato HH:MM ou HH:MM:SS."
+        },
+        "login_failed": {
+            "message": "Falha no login do Growatt: {message}"
+        },
+        "migration_invalid_plant_id": {
+            "message": "A configura\u00e7\u00e3o cont\u00e9m um ID de usina inv\u00e1lido, reconfigure a integra\u00e7\u00e3o"
+        },
+        "migration_missing_credentials": {
+            "message": "A configura\u00e7\u00e3o n\u00e3o tem o nome de usu\u00e1rio ou a senha, reconfigure a integra\u00e7\u00e3o"
+        },
+        "migration_no_plants": {
+            "message": "Nenhuma usina encontrada para a conta Growatt {username}"
+        },
+        "migration_plant_id_failed": {
+            "message": "Falha ao obter o ID da usina pela API da Growatt"
+        },
+        "no_devices_configured": {
+            "message": "Nenhum dispositivo {device_type} com autentica\u00e7\u00e3o por token est\u00e1 configurado. As a\u00e7\u00f5es exigem dispositivos {device_type} com acesso \u00e0 API V1."
+        },
+        "rate_limited": {
+            "message": "Taxa da API Growatt limitada, tentar\u00e1 novamente: {error}"
+        },
+        "token_auth_required": {
+            "message": "Esta a\u00e7\u00e3o requer autentica\u00e7\u00e3o por token (API V1)."
+        },
+        "unknown_auth_type": {
+            "message": "Tipo de autentica\u00e7\u00e3o desconhecido na entrada de configura\u00e7\u00e3o"
+        }
+    },
+    "selector": {
+        "batt_mode": {
+            "options": {
+                "battery_first": "Bateria primeiro",
+                "grid_first": "Rede primeiro",
+                "load_first": "Carregar primeiro"
+            }
+        },
+        "region": {
+            "options": {
+                "australia_new_zealand": "Austr\u00e1lia e Nova Zel\u00e2ndia",
+                "china": "China",
+                "era_server": "Servidor Era (Atess Power)",
+                "north_america": "Am\u00e9rica do Norte",
+                "other_regions": "Outras regi\u00f5es",
+                "smten_server": "Servidor SMTEN"
+            }
+        }
+    },
+    "services": {
+        "read_ac_charge_times": {
+            "description": "L\u00ea os per\u00edodos de carregamento CA de um dispositivo SPH.",
+            "fields": {
+                "device_id": {
+                    "description": "O dispositivo Growatt no qual executar a a\u00e7\u00e3o.",
+                    "name": "Dispositivo"
+                }
+            },
+            "name": "Ler tempos de carga CA"
+        },
+        "read_ac_discharge_times": {
+            "description": "L\u00ea os per\u00edodos de descarga CA de um dispositivo SPH.",
+            "fields": {
+                "device_id": {
+                    "description": "O dispositivo Growatt no qual executar a a\u00e7\u00e3o.",
+                    "name": "Dispositivo"
+                }
+            },
+            "name": "Ler tempos de descarga CA"
+        },
+        "read_time_segments": {
+            "description": "L\u00ea todos os segmentos de tempo de um inversor compat\u00edvel.",
+            "fields": {
+                "device_id": {
+                    "description": "O dispositivo Growatt no qual executar a a\u00e7\u00e3o.",
+                    "name": "Dispositivo"
+                }
+            },
+            "name": "Ler segmentos de tempo"
+        },
+        "update_time_segment": {
+            "description": "Atualiza um segmento de tempo para inversores compat\u00edveis.",
+            "fields": {
+                "batt_mode": {
+                    "description": "Modo de opera\u00e7\u00e3o da bateria para este segmento de tempo.",
+                    "name": "Modo da bateria"
+                },
+                "device_id": {
+                    "description": "O dispositivo Growatt no qual executar a a\u00e7\u00e3o.",
+                    "name": "Dispositivo"
+                },
+                "enabled": {
+                    "description": "Se este segmento de tempo est\u00e1 ativo.",
+                    "name": "Habilitado"
+                },
+                "end_time": {
+                    "description": "Hora de t\u00e9rmino do segmento (formato HH:MM).",
+                    "name": "Hora de t\u00e9rmino"
+                },
+                "segment_id": {
+                    "description": "ID do segmento de tempo (1-9).",
+                    "name": "ID do segmento"
+                },
+                "start_time": {
+                    "description": "Hora de in\u00edcio do segmento (formato HH:MM).",
+                    "name": "Hora de in\u00edcio"
+                }
+            },
+            "name": "Atualizar segmento de tempo"
+        },
+        "write_ac_charge_times": {
+            "description": "Grava os per\u00edodos de tempo de carga CA em um dispositivo SPH.",
+            "fields": {
+                "charge_power": {
+                    "description": "Limite de pot\u00eancia de carga (%).",
+                    "name": "Pot\u00eancia de carga"
+                },
+                "charge_stop_soc": {
+                    "description": "Parar de carregar neste estado de carga (%).",
+                    "name": "SOC de parada da carga"
+                },
+                "device_id": {
+                    "description": "O dispositivo Growatt no qual executar a a\u00e7\u00e3o.",
+                    "name": "Dispositivo"
+                },
+                "mains_enabled": {
+                    "description": "Habilitar carregamento CA (rede el\u00e9trica).",
+                    "name": "Carregamento pela rede habilitado"
+                },
+                "period_1_enabled": {
+                    "description": "Habilitar o per\u00edodo de tempo 1.",
+                    "name": "Per\u00edodo 1 habilitado"
+                },
+                "period_1_end": {
+                    "description": "Hora de t\u00e9rmino do per\u00edodo 1 (HH:MM ou HH:MM:SS).",
+                    "name": "Fim do per\u00edodo 1"
+                },
+                "period_1_start": {
+                    "description": "Hora de in\u00edcio do per\u00edodo 1 (HH:MM ou HH:MM:SS).",
+                    "name": "In\u00edcio do per\u00edodo 1"
+                },
+                "period_2_enabled": {
+                    "description": "Habilitar o per\u00edodo de tempo 2.",
+                    "name": "Per\u00edodo 2 habilitado"
+                },
+                "period_2_end": {
+                    "description": "Hora de t\u00e9rmino do per\u00edodo 2 (HH:MM ou HH:MM:SS).",
+                    "name": "Fim do per\u00edodo 2"
+                },
+                "period_2_start": {
+                    "description": "Hora de in\u00edcio do per\u00edodo 2 (HH:MM ou HH:MM:SS).",
+                    "name": "In\u00edcio do per\u00edodo 2"
+                },
+                "period_3_enabled": {
+                    "description": "Habilitar o per\u00edodo de tempo 3.",
+                    "name": "Per\u00edodo 3 habilitado"
+                },
+                "period_3_end": {
+                    "description": "Hora de t\u00e9rmino do per\u00edodo 3 (HH:MM ou HH:MM:SS).",
+                    "name": "Fim do per\u00edodo 3"
+                },
+                "period_3_start": {
+                    "description": "Hora de in\u00edcio do per\u00edodo 3 (HH:MM ou HH:MM:SS).",
+                    "name": "In\u00edcio do per\u00edodo 3"
+                }
+            },
+            "name": "Escrever tempos de carga CA"
+        },
+        "write_ac_discharge_times": {
+            "description": "Grava os per\u00edodos de tempo de descarga CA em um dispositivo SPH.",
+            "fields": {
+                "device_id": {
+                    "description": "O dispositivo Growatt no qual executar a a\u00e7\u00e3o.",
+                    "name": "Dispositivo"
+                },
+                "discharge_power": {
+                    "description": "Limite de pot\u00eancia de descarga (%).",
+                    "name": "Pot\u00eancia de descarga"
+                },
+                "discharge_stop_soc": {
+                    "description": "Parar a descarga neste estado de carga (%).",
+                    "name": "SOC de parada da descarga"
+                },
+                "period_1_enabled": {
+                    "description": "Habilitar o per\u00edodo de tempo 1.",
+                    "name": "Per\u00edodo 1 habilitado"
+                },
+                "period_1_end": {
+                    "description": "Hora de t\u00e9rmino do per\u00edodo 1 (HH:MM ou HH:MM:SS).",
+                    "name": "Fim do per\u00edodo 1"
+                },
+                "period_1_start": {
+                    "description": "Hora de in\u00edcio do per\u00edodo 1 (HH:MM ou HH:MM:SS).",
+                    "name": "In\u00edcio do per\u00edodo 1"
+                },
+                "period_2_enabled": {
+                    "description": "Habilitar o per\u00edodo de tempo 2.",
+                    "name": "Per\u00edodo 2 habilitado"
+                },
+                "period_2_end": {
+                    "description": "Hora de t\u00e9rmino do per\u00edodo 2 (HH:MM ou HH:MM:SS).",
+                    "name": "Fim do per\u00edodo 2"
+                },
+                "period_2_start": {
+                    "description": "Hora de in\u00edcio do per\u00edodo 2 (HH:MM ou HH:MM:SS).",
+                    "name": "In\u00edcio do per\u00edodo 2"
+                },
+                "period_3_enabled": {
+                    "description": "Habilitar o per\u00edodo de tempo 3.",
+                    "name": "Per\u00edodo 3 habilitado"
+                },
+                "period_3_end": {
+                    "description": "Hora de t\u00e9rmino do per\u00edodo 3 (HH:MM ou HH:MM:SS).",
+                    "name": "Fim do per\u00edodo 3"
+                },
+                "period_3_start": {
+                    "description": "Hora de in\u00edcio do per\u00edodo 3 (HH:MM ou HH:MM:SS).",
+                    "name": "In\u00edcio do per\u00edodo 3"
+                }
+            },
+            "name": "Escrever hor\u00e1rios de descarga de CA"
+        }
+    },
+    "title": "Servidor Growatt"
+}

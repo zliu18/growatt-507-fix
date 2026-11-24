@@ -1,0 +1,860 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "cannot_connect": "\u00dchendamine nurjus",
+            "no_plants": "Kontolt ei leitud \u00fchtegi taime"
+        },
+        "error": {
+            "cannot_connect": "Growatti serveritega ei saa \u00fchendust luua. Kontrollige interneti\u00fchendust ja proovi uuesti.",
+            "invalid_auth": "Autentimine nurjus. Kontrolli oma volitusi ja proovi uuesti."
+        },
+        "step": {
+            "password_auth": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "region": "Serveri piirkond",
+                    "username": "Kasutajanimi"
+                },
+                "data_description": {
+                    "password": "Growatti konto salas\u00f5na.",
+                    "region": "Serveri piirkond mis vastab Growatti konto asukohale.",
+                    "username": "Growatti konto e-posti aadress v\u00f5i kasutajanimi."
+                },
+                "title": "Sisesta Growatti sisselogimismandaadid"
+            },
+            "plant": {
+                "data": {
+                    "plant_id": "Taim"
+                },
+                "data_description": {
+                    "plant_id": "Growatti paigaldis (p\u00e4ikeseenergiaseade) sidumiseks."
+                },
+                "title": "Vali oma taim"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "region": "Serveri piirkond",
+                    "token": "API v\u00f5ti",
+                    "username": "Kasutajanimi"
+                },
+                "data_description": {
+                    "password": "Growatti konto salas\u00f5na.",
+                    "region": "Serveri piirkond mis vastab Growatti konto asukohale.",
+                    "token": "Growatt'i konto API-v\u00f5ti. Saad selle genereerida Growatti veebiportaali v\u00f5i ShinePhone'i rakenduse kaudu.",
+                    "username": "Growatti konto e-posti aadress v\u00f5i kasutajanimi."
+                },
+                "description": "Selle sidumise kasutamise j\u00e4tkamiseks sisesta oma volitused uuesti.",
+                "title": "Growatt taastuvastamine"
+            },
+            "reconfigure": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "region": "Serveri piirkond",
+                    "token": "API v\u00f5ti",
+                    "username": "Kasutajanimi"
+                },
+                "data_description": {
+                    "password": "Growatti konto salas\u00f5na.",
+                    "region": "Serveri piirkond mis vastab Growatti konto asukohale.",
+                    "token": "Growatt'i konto API-v\u00f5ti. Saad selle genereerida Growatti veebiportaali v\u00f5i ShinePhone'i rakenduse kaudu.",
+                    "username": "Growatti konto e-posti aadress v\u00f5i kasutajanimi."
+                },
+                "description": "Selle sidumise kasutamise j\u00e4tkamiseks sisesta oma volitused uuesti.",
+                "title": "Growatti \u00fcmberseadistamine"
+            },
+            "token_auth": {
+                "data": {
+                    "region": "Serveri piirkond",
+                    "token": "API v\u00f5ti"
+                },
+                "data_description": {
+                    "region": "Serveri piirkond mis vastab Growatti konto asukohale.",
+                    "token": "Growatt'i konto API-v\u00f5ti. Saad selle genereerida Growatti veebiportaali v\u00f5i ShinePhone'i rakenduse kaudu."
+                },
+                "description": "Tokeni autentimist toetatakse ainult MIN/SPH seadmete puhul. Teiste seadmet\u00fc\u00fcpide puhul kasuta kasutajanime/salas\u00f5naga autentimist.",
+                "title": "Sisesta oma API tunnus"
+            },
+            "user": {
+                "description": "M\u00e4rkus: API Tokeni autentimist toetatakse praegu ainult MIN/SPH-seadmete puhul. Muude seadmet\u00fc\u00fcpide puhul kasuta kasutajanime ja salas\u00f5naga tuvastamist.",
+                "menu_options": {
+                    "password_auth": "Kasutajanimi / salas\u00f5na",
+                    "token_auth": "API tunnus (ainult MIN/SPH)"
+                },
+                "title": "Vali tuvastusmeetod"
+            }
+        }
+    },
+    "entity": {
+        "number": {
+            "battery_charge_power_limit": {
+                "name": "Aku laadimisv\u00f5imsuse piirang"
+            },
+            "battery_charge_soc_limit": {
+                "name": "Aku laadimise taseme piirang"
+            },
+            "battery_discharge_power_limit": {
+                "name": "Aku t\u00fchjenemisv\u00f5imsuse piirang"
+            },
+            "battery_discharge_soc_limit_off_grid": {
+                "name": "Aku t\u00fchjenemise SOC piirang (v\u00f5rguv\u00e4line)"
+            },
+            "battery_discharge_soc_limit_on_grid": {
+                "name": "Aku t\u00fchjenemise SOC piirang (v\u00f5rgus)"
+            }
+        },
+        "sensor": {
+            "inverter_amperage_input_1": {
+                "name": "Sisend 1 voolutugevus"
+            },
+            "inverter_amperage_input_2": {
+                "name": "Sisend 2 voolutugevus"
+            },
+            "inverter_amperage_input_3": {
+                "name": "Sisend 3 voolutugevus"
+            },
+            "inverter_current_reactive_wattage": {
+                "name": "Reaktiivv\u00f5imsus"
+            },
+            "inverter_current_wattage": {
+                "name": "V\u00e4ljundv\u00f5imsus"
+            },
+            "inverter_energy_today": {
+                "name": "Energia t\u00e4na"
+            },
+            "inverter_energy_total": {
+                "name": "Eluaegne energiatoodang"
+            },
+            "inverter_frequency": {
+                "name": "Vahelduvvoolu sagedus"
+            },
+            "inverter_internal_wattage": {
+                "name": "Sisemine v\u00f5imsus"
+            },
+            "inverter_ipm_temperature": {
+                "name": "Intelligentse toitehalduse temperatuur"
+            },
+            "inverter_reactive_amperage": {
+                "name": "Reaktiivne voolutugevus"
+            },
+            "inverter_reactive_voltage": {
+                "name": "Reaktiivpinge"
+            },
+            "inverter_temperature": {
+                "name": "Inverteri temperatuur"
+            },
+            "inverter_voltage_input_1": {
+                "name": "Sisend 1 pinge"
+            },
+            "inverter_voltage_input_2": {
+                "name": "Sisend 2 pinge"
+            },
+            "inverter_voltage_input_3": {
+                "name": "Sisend 3 pinge"
+            },
+            "inverter_wattage_input_1": {
+                "name": "Sisend 1 v\u00f5imsus"
+            },
+            "inverter_wattage_input_2": {
+                "name": "Sisend 2 v\u00f5imsus"
+            },
+            "inverter_wattage_input_3": {
+                "name": "Sisend 3 v\u00f5imsus"
+            },
+            "mix_battery_charge": {
+                "name": "Aku laadimine"
+            },
+            "mix_battery_charge_lifetime": {
+                "name": "Eluaegne aku laadimine"
+            },
+            "mix_battery_charge_today": {
+                "name": "Akut laetud t\u00e4na"
+            },
+            "mix_battery_discharge_kw": {
+                "name": "Aku t\u00fchjenemine kW"
+            },
+            "mix_battery_discharge_lifetime": {
+                "name": "Eluaegne aku t\u00fchjenemine"
+            },
+            "mix_battery_discharge_today": {
+                "name": "Aku t\u00fchjenes t\u00e4na"
+            },
+            "mix_battery_discharge_w": {
+                "name": "Aku t\u00fchjenemine W"
+            },
+            "mix_battery_voltage": {
+                "name": "Aku pinge"
+            },
+            "mix_export_to_grid": {
+                "name": "Eksportimine v\u00f5rku"
+            },
+            "mix_export_to_grid_lifetime": {
+                "name": "Eluaegne eksport v\u00f5rku"
+            },
+            "mix_export_to_grid_today": {
+                "name": "Eksport v\u00f5rku t\u00e4na"
+            },
+            "mix_grid_voltage": {
+                "name": "V\u00f5rgu pinge"
+            },
+            "mix_import_from_grid": {
+                "name": "Import v\u00f5rgust"
+            },
+            "mix_import_from_grid_today": {
+                "name": "Import v\u00f5rgust t\u00e4na (tarbimine)"
+            },
+            "mix_import_from_grid_today_combined": {
+                "name": "Import v\u00f5rgust t\u00e4na (koormus + laadimine)"
+            },
+            "mix_last_update": {
+                "name": "Viimane andmete v\u00e4rskendus"
+            },
+            "mix_load_consumption": {
+                "name": "Koormuse tarbimine"
+            },
+            "mix_load_consumption_battery_today": {
+                "name": "T\u00e4nane koormustarbimine (aku)"
+            },
+            "mix_load_consumption_lifetime": {
+                "name": "Koormuse tarbimine kokku"
+            },
+            "mix_load_consumption_solar_today": {
+                "name": "Koormuse tarbimine t\u00e4na (p\u00e4ike)"
+            },
+            "mix_load_consumption_today": {
+                "name": "Koormuse tarbimine t\u00e4na"
+            },
+            "mix_load_consumption_total": {
+                "name": "Eluaegne kogutarbimine"
+            },
+            "mix_pv1_voltage": {
+                "name": "PV1 pinge"
+            },
+            "mix_pv2_voltage": {
+                "name": "PV2 pinge"
+            },
+            "mix_self_consumption_today": {
+                "name": "Omatarbimine t\u00e4na (p\u00e4ike + aku)"
+            },
+            "mix_solar_generation_lifetime": {
+                "name": "Kogu eluea p\u00e4ikeseenergia"
+            },
+            "mix_solar_generation_today": {
+                "name": "P\u00e4ikeseenergia t\u00e4na"
+            },
+            "mix_statement_of_charge": {
+                "name": "Laetuse olek"
+            },
+            "mix_system_production_today": {
+                "name": "S\u00fcsteemi tootmine t\u00e4na (omatarbimine + eksport)"
+            },
+            "mix_wattage_pv_1": {
+                "name": "PV1 v\u00f5imsus"
+            },
+            "mix_wattage_pv_2": {
+                "name": "PV2 v\u00f5imsus"
+            },
+            "mix_wattage_pv_all": {
+                "name": "Kogu PV v\u00f5imsus"
+            },
+            "sph_grid_frequency": {
+                "name": "Vahelduvvoolu sagedus"
+            },
+            "sph_temperature_1": {
+                "name": "Temperatuur 1"
+            },
+            "sph_temperature_2": {
+                "name": "Temperatuur 2"
+            },
+            "sph_temperature_3": {
+                "name": "Temperatuur 3"
+            },
+            "sph_temperature_4": {
+                "name": "Temperatuur 4"
+            },
+            "sph_temperature_5": {
+                "name": "Temperatuur 5"
+            },
+            "storage_ac_input_frequency_out": {
+                "name": "Vahelduvvoolu sisendsagedus"
+            },
+            "storage_ac_output_frequency": {
+                "name": "Vahelduvvoolu v\u00e4ljundsagedus"
+            },
+            "storage_battery_percentage": {
+                "name": "Laetuse protsent"
+            },
+            "storage_battery_voltage": {
+                "name": "Aku pinge"
+            },
+            "storage_charge_storage_lifetime": {
+                "name": "Salvestatud energia kokku"
+            },
+            "storage_charge_today": {
+                "name": "Laadimine t\u00e4na"
+            },
+            "storage_current_1": {
+                "name": "PV1 vool salvestisse"
+            },
+            "storage_current_2": {
+                "name": "PV2 vool salvestisse"
+            },
+            "storage_current_pv": {
+                "name": "P\u00e4ikeselaadimise voolutugevus"
+            },
+            "storage_grid_amperage_input": {
+                "name": "V\u00f5rgu laadimisvool"
+            },
+            "storage_grid_charged_lifetime": {
+                "name": "Eluaegne v\u00f5rku tootmine"
+            },
+            "storage_grid_charged_today": {
+                "name": "V\u00f5rgust laetud t\u00e4na"
+            },
+            "storage_grid_discharge_lifetime": {
+                "name": "Eluaegne v\u00f5rgust tarbimine"
+            },
+            "storage_grid_discharge_today": {
+                "name": "V\u00f5rku t\u00e4na antud"
+            },
+            "storage_grid_out_current": {
+                "name": "V\u00f5rgu v\u00e4ljavool"
+            },
+            "storage_grid_voltage": {
+                "name": "Vahelduvvoolu sisendpinge"
+            },
+            "storage_import_from_grid": {
+                "name": "Import v\u00f5rgust"
+            },
+            "storage_import_from_grid_today": {
+                "name": "Import v\u00f5rgust t\u00e4na"
+            },
+            "storage_import_from_grid_total": {
+                "name": "Import v\u00f5rgust kokku"
+            },
+            "storage_load_consumption": {
+                "name": "Koormuse tarbimine"
+            },
+            "storage_load_consumption_lifetime": {
+                "name": "Koormuse tarbimine kokku"
+            },
+            "storage_load_consumption_solar_storage": {
+                "name": "Koormuse tarbimine (p\u00e4ikeseenergia + salvestamine)"
+            },
+            "storage_load_consumption_today": {
+                "name": "Koormuse tarbimine t\u00e4na"
+            },
+            "storage_load_percentage": {
+                "name": "Laetuse protsent"
+            },
+            "storage_output_voltage": {
+                "name": "V\u00e4ljundpinge"
+            },
+            "storage_power_flow": {
+                "name": "Laadimine/ t\u00fchjendamine (-ve)"
+            },
+            "storage_pv_charging_voltage": {
+                "name": "PV1 laadimispinge"
+            },
+            "storage_pv_charging_voltage_2": {
+                "name": "PV2 laadimispinge"
+            },
+            "storage_solar_output_lifetime": {
+                "name": "Eluaegne p\u00e4ikeseenergia toodang"
+            },
+            "storage_solar_output_today": {
+                "name": "P\u00e4ikeseenergia toodang t\u00e4na"
+            },
+            "storage_solar_production": {
+                "name": "P\u00e4ikeseenergia tootmine (PV1)"
+            },
+            "storage_solar_production_2": {
+                "name": "P\u00e4ikeseenergia tootmine (PV2)"
+            },
+            "storage_storage_production_lifetime": {
+                "name": "Salvestuse toodang kokku"
+            },
+            "storage_storage_production_today": {
+                "name": "Salvestuse toodang t\u00e4na"
+            },
+            "tlx_all_batteries_charge_today": {
+                "name": "K\u00f5ik akud on t\u00e4na laetud"
+            },
+            "tlx_all_batteries_charge_total": {
+                "name": "Akude kogu saadud energia"
+            },
+            "tlx_all_batteries_discharge_today": {
+                "name": "K\u00f5ik t\u00e4na t\u00fchjendatud akud"
+            },
+            "tlx_all_batteries_discharge_total": {
+                "name": "Akude kogu \u00e4ra antud energia"
+            },
+            "tlx_amperage_input_1": {
+                "name": "Sisend 1 voolutugevus"
+            },
+            "tlx_amperage_input_2": {
+                "name": "Sisend 2 voolutugevus"
+            },
+            "tlx_amperage_input_3": {
+                "name": "Sisend 3 voolutugevus"
+            },
+            "tlx_amperage_input_4": {
+                "name": "Sisend 4 voolutugevus"
+            },
+            "tlx_batteries_charged_from_grid_today": {
+                "name": "T\u00e4na v\u00f5rgust laetud akudesse"
+            },
+            "tlx_batteries_charged_from_grid_total": {
+                "name": "Elektriv\u00f5rgust laetud akudesse kogu eluea jooksul"
+            },
+            "tlx_battery_1_charge_total": {
+                "name": "Aku 1 kogu salvestatud energia"
+            },
+            "tlx_battery_1_charge_w": {
+                "name": "Aku 1 laadimine W"
+            },
+            "tlx_battery_1_discharge_total": {
+                "name": "Aku 1 kogu \u00e4ra antud energia"
+            },
+            "tlx_battery_1_discharge_w": {
+                "name": "Aku 1 t\u00fchjenemine W"
+            },
+            "tlx_battery_2_charge_total": {
+                "name": "Aku 2 kogu salvestatud energia"
+            },
+            "tlx_battery_2_charge_w": {
+                "name": "Aku 2 laadimine W"
+            },
+            "tlx_battery_2_discharge_total": {
+                "name": "Aku 2 kogu \u00e4ra antud energia"
+            },
+            "tlx_battery_2_discharge_w": {
+                "name": "Aku 2 t\u00fchjenemine W"
+            },
+            "tlx_current_wattage": {
+                "name": "V\u00e4ljundv\u00f5imsus"
+            },
+            "tlx_energy_today": {
+                "name": "Energia tarbimine t\u00e4na"
+            },
+            "tlx_energy_today_input_1": {
+                "name": "Energia t\u00e4na sisend 1"
+            },
+            "tlx_energy_today_input_2": {
+                "name": "Energia t\u00e4na sisend 2"
+            },
+            "tlx_energy_today_input_3": {
+                "name": "Energia t\u00e4na sisend 3"
+            },
+            "tlx_energy_today_input_4": {
+                "name": "Energia t\u00e4na sisend 4"
+            },
+            "tlx_energy_total": {
+                "name": "Eluaegne energiatoodang"
+            },
+            "tlx_energy_total_input_1": {
+                "name": "Kogu eluea energiasisend 1"
+            },
+            "tlx_energy_total_input_2": {
+                "name": "Kogu eluea energiasisend 2"
+            },
+            "tlx_energy_total_input_3": {
+                "name": "Kogu eluea energiasisend 3"
+            },
+            "tlx_energy_total_input_4": {
+                "name": "Kogu eluea energiasisend 4"
+            },
+            "tlx_export_to_grid_today": {
+                "name": "Eksport v\u00f5rku t\u00e4na"
+            },
+            "tlx_export_to_grid_total": {
+                "name": "Kogu eluea eksport v\u00f5rku"
+            },
+            "tlx_frequency": {
+                "name": "Vahelduvvoolu sagedus"
+            },
+            "tlx_import_from_grid_today": {
+                "name": "Import v\u00f5rgust t\u00e4na"
+            },
+            "tlx_import_from_grid_total": {
+                "name": "Eluaegne import v\u00f5rgust"
+            },
+            "tlx_internal_wattage": {
+                "name": "Sisemine v\u00f5imsus"
+            },
+            "tlx_load_consumption_today": {
+                "name": "Koormuse tarbimine t\u00e4na"
+            },
+            "tlx_p_self": {
+                "name": "Omav\u00f5imsus"
+            },
+            "tlx_p_system": {
+                "name": "S\u00fcsteemi v\u00f5imsus"
+            },
+            "tlx_pac_to_grid_total": {
+                "name": "Ekspordi v\u00f5imsus"
+            },
+            "tlx_pac_to_local_load": {
+                "name": "Kohalik koormusv\u00f5imsus"
+            },
+            "tlx_pac_to_user_total": {
+                "name": "Impordi v\u00f5imsus"
+            },
+            "tlx_reactive_voltage": {
+                "name": "Reaktiivpinge"
+            },
+            "tlx_self_consumption_today": {
+                "name": "Omatarbimine t\u00e4na"
+            },
+            "tlx_self_consumption_total": {
+                "name": "Eluaegne omatarbimine"
+            },
+            "tlx_solar_generation_today": {
+                "name": "P\u00e4ikeseenergia t\u00e4na"
+            },
+            "tlx_solar_generation_total": {
+                "name": "Kogu eluea p\u00e4ikeseenergia"
+            },
+            "tlx_statement_of_charge": {
+                "name": "Aku laetus (SoC)"
+            },
+            "tlx_system_production_today": {
+                "name": "S\u00fcsteemi tootmine t\u00e4na"
+            },
+            "tlx_system_production_total": {
+                "name": "Eluaegne s\u00fcsteemi tootmine"
+            },
+            "tlx_temperature_1": {
+                "name": "Temperatuur 1"
+            },
+            "tlx_temperature_2": {
+                "name": "Temperatuur 2"
+            },
+            "tlx_temperature_3": {
+                "name": "Temperatuur 3"
+            },
+            "tlx_temperature_4": {
+                "name": "Temperatuur 4"
+            },
+            "tlx_temperature_5": {
+                "name": "Temperatuur 5"
+            },
+            "tlx_voltage_input_1": {
+                "name": "Sisend 1 pinge"
+            },
+            "tlx_voltage_input_2": {
+                "name": "Sisend 2 pinge"
+            },
+            "tlx_voltage_input_3": {
+                "name": "Sisend 3 pinge"
+            },
+            "tlx_voltage_input_4": {
+                "name": "Sisend 4 pinge"
+            },
+            "tlx_wattage_input_1": {
+                "name": "Sisend 1 v\u00f5imsus"
+            },
+            "tlx_wattage_input_2": {
+                "name": "Sisend 2 v\u00f5imsus"
+            },
+            "tlx_wattage_input_3": {
+                "name": "Sisend 3 v\u00f5imsus"
+            },
+            "tlx_wattage_input_4": {
+                "name": "Sisend 4 v\u00f5imsus"
+            },
+            "total_energy_output": {
+                "name": "Eluaegne energiatoodang"
+            },
+            "total_energy_today": {
+                "name": "Energia t\u00e4na"
+            },
+            "total_maximum_output": {
+                "name": "Maksimaalne v\u00f5imsus"
+            },
+            "total_money_today": {
+                "name": "Raha kokku t\u00e4na"
+            },
+            "total_money_total": {
+                "name": "Raha eluiga"
+            },
+            "total_output_power": {
+                "name": "V\u00e4ljundv\u00f5imsus"
+            }
+        },
+        "switch": {
+            "ac_charge": {
+                "name": "Laadimine elektriv\u00f5rgust"
+            }
+        }
+    },
+    "exceptions": {
+        "api_error": {
+            "message": "Growatt API viga: {error}"
+        },
+        "api_error_with_code": {
+            "message": "API viga: {error} (Kood: {code})"
+        },
+        "auth_failed": {
+            "message": "Growatt API autentimine eba\u00f5nnestus: {error}"
+        },
+        "communication_error": {
+            "message": "Viga Growatt API-ga suhtlemisel: {error}"
+        },
+        "device_not_configured": {
+            "message": "{device_type} seade {serial_number} pole toimingute jaoks konfigureeritud."
+        },
+        "device_not_found": {
+            "message": "Seadet {device_id} seadmete registrist ei leitud."
+        },
+        "device_not_growatt": {
+            "message": "Seade {device_id} ei ole Growatti seade."
+        },
+        "fetch_data_failed": {
+            "message": "Viga andmete hankimisel Growatt API-st: {error}"
+        },
+        "invalid_batt_mode": {
+            "message": "{batt_mode} ei ole kehtiv akure\u017eiim. Lubatud v\u00e4\u00e4rtused: {allowed_modes}."
+        },
+        "invalid_charge_power": {
+            "message": "'Laadimisv\u00f5imsus' peab olema vahemikus 0 kuni 100, sain {value}."
+        },
+        "invalid_charge_stop_soc": {
+            "message": "'Charge stop SOC' peab olema vahemikus 0 ja 100, sain {value}."
+        },
+        "invalid_credentials": {
+            "message": "Kasutajanimi, parool v\u00f5i URL v\u00f5ib olla vale"
+        },
+        "invalid_discharge_power": {
+            "message": "'T\u00fchjendusv\u00f5imsus' peab olema vahemikus 0 kuni 100, sain {value}."
+        },
+        "invalid_discharge_stop_soc": {
+            "message": "'T\u00fchjenduspeatuse SOC' peab olema vahemikus 0 kuni 100, sain {value}."
+        },
+        "invalid_segment_id": {
+            "message": "'Segmendi ID' peab olema vahemikus 1 kuni 9, saime {segment_id}."
+        },
+        "invalid_time_format_end_time": {
+            "message": "\u201eL\u00f5puaeg\u201c peab olema vormingus HH:MM v\u00f5i HH:MM:SS."
+        },
+        "invalid_time_format_period_end": {
+            "message": "\"Periood {period} l\u00f5pp\" peab olema kujul HH:MM v\u00f5i HH:MM:SS."
+        },
+        "invalid_time_format_period_start": {
+            "message": "'Perioodi {period} algus' peab olema kujul HH:MM v\u00f5i HH:MM:SS."
+        },
+        "invalid_time_format_start_time": {
+            "message": "\"Algusaeg\" peab olema HH:MM v\u00f5i HH:MM:SS formaadis."
+        },
+        "login_failed": {
+            "message": "Growatt sisselogimine eba\u00f5nnestus: {message}"
+        },
+        "no_devices_configured": {
+            "message": "\u00dchtegi {device_type} seadet ei ole konfigureeritud millel on s\u00fcmboolne autentimine. Tegevused n\u00f5uavad {device_type} seadmeid millel on V1 API juurdep\u00e4\u00e4s."
+        },
+        "rate_limited": {
+            "message": "Growatt API m\u00e4\u00e4r on piiratud, proovib uuesti: {error}"
+        },
+        "token_auth_required": {
+            "message": "See toiming n\u00f5uab tokeni autentimist (V1 API)."
+        },
+        "unknown_auth_type": {
+            "message": "Tundmatu autentimist\u00fc\u00fcp konfiguratsioonikirjes"
+        }
+    },
+    "selector": {
+        "batt_mode": {
+            "options": {
+                "battery_first": "Aku laadimise eelistamine",
+                "grid_first": "V\u00f5rku m\u00fc\u00fcgi eelistamine",
+                "load_first": "Tarbimise eelistamine"
+            }
+        },
+        "region": {
+            "options": {
+                "australia_new_zealand": "Austraalia ja Uus-Meremaa",
+                "china": "Hiina",
+                "era_server": "Era server (Atess Power)",
+                "north_america": "P\u00f5hja-Ameerika",
+                "other_regions": "Muud piirkonnad",
+                "smten_server": "SMTEN server"
+            }
+        }
+    },
+    "services": {
+        "read_ac_charge_times": {
+            "description": "Loeb SPH-seadmest vahelduvvoolu laadimise ajavahemikke.",
+            "fields": {
+                "device_id": {
+                    "description": "Growatti seade toimingu sooritamiseks.",
+                    "name": "Seade"
+                }
+            },
+            "name": "Loe vahelduvvoolu laadimisaegu"
+        },
+        "read_ac_discharge_times": {
+            "description": "Loeb vahelduvvoolu t\u00fchjendusajaid SPH-seadmest.",
+            "fields": {
+                "device_id": {
+                    "description": "Growatti seade toimingu sooritamiseks.",
+                    "name": "Seade"
+                }
+            },
+            "name": "Loe vahelduvvoolu t\u00fchjenemisaegu"
+        },
+        "read_time_segments": {
+            "description": "Loeb k\u00f5ik ajasegmendid toetatud inverterist.",
+            "fields": {
+                "device_id": {
+                    "description": "Growatti seade toimingu sooritamiseks.",
+                    "name": "Seade"
+                }
+            },
+            "name": "Ajavahemike lugemine"
+        },
+        "update_time_segment": {
+            "description": "V\u00e4rskendab toetatud inverterite ajasegmenti.",
+            "fields": {
+                "batt_mode": {
+                    "description": "Aku t\u00f6\u00f6re\u017eiim selle ajavahemiku jaoks.",
+                    "name": "Aku re\u017eiim"
+                },
+                "device_id": {
+                    "description": "Growatti seade toimingu sooritamiseks.",
+                    "name": "Seade"
+                },
+                "enabled": {
+                    "description": "Kas see ajavahemik on aktiivne.",
+                    "name": "Lubatud"
+                },
+                "end_time": {
+                    "description": "Ajavahemiku l\u00f5puaeg (vormingus HH:MM).",
+                    "name": "L\u00f5puaeg"
+                },
+                "segment_id": {
+                    "description": "Ajavahemiku ID (1-9).",
+                    "name": "Ajavahemiku ID"
+                },
+                "start_time": {
+                    "description": "Ajavahemiku algusaeg (vormingus HH:MM).",
+                    "name": "Algusaeg"
+                }
+            },
+            "name": "Ajavahemiku v\u00e4rskendamine"
+        },
+        "write_ac_charge_times": {
+            "description": "Kirjutab vahelduvvoolu laadimise ajaperioodid SPH-seadmesse.",
+            "fields": {
+                "charge_power": {
+                    "description": "Laadimisv\u00f5imsuse piirang (%).",
+                    "name": "Laadimisv\u00f5imsus"
+                },
+                "charge_stop_soc": {
+                    "description": "L\u00f5peta laadimine selle laetuse taseme (%) juures.",
+                    "name": "Laadimise seiskamine SOC"
+                },
+                "device_id": {
+                    "description": "Growatti seade toimingu sooritamiseks.",
+                    "name": "Seade"
+                },
+                "mains_enabled": {
+                    "description": "Luba vahelduvvoolu (vooluv\u00f5rgust) laadimine.",
+                    "name": "Vooluv\u00f5rgust laadimine lubatud"
+                },
+                "period_1_enabled": {
+                    "description": "Luba ajaperiood 1.",
+                    "name": "Periood 1 lubatud"
+                },
+                "period_1_end": {
+                    "description": "1. perioodi l\u00f5puaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "1. perioodi l\u00f5pp"
+                },
+                "period_1_start": {
+                    "description": "1. perioodi algusaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "1. perioodi algus"
+                },
+                "period_2_enabled": {
+                    "description": "Luba ajaperiood 2.",
+                    "name": "Periood 2 lubatud"
+                },
+                "period_2_end": {
+                    "description": "2. perioodi l\u00f5puaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "2. perioodi l\u00f5pp"
+                },
+                "period_2_start": {
+                    "description": "2. perioodi algusaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "2. perioodi algus"
+                },
+                "period_3_enabled": {
+                    "description": "Luba ajaperiood 3.",
+                    "name": "Periood 3 lubatud"
+                },
+                "period_3_end": {
+                    "description": "3. perioodi l\u00f5puaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "3. perioodi l\u00f5pp"
+                },
+                "period_3_start": {
+                    "description": "3. perioodi algusaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "3. perioodi algus"
+                }
+            },
+            "name": "Kirjuta vahelduvvoolu laadimisajad"
+        },
+        "write_ac_discharge_times": {
+            "description": "Kirjutab vahelduvvoolu t\u00fchjendusperioodid SPH-seadmesse.",
+            "fields": {
+                "device_id": {
+                    "description": "Growatti seade toimingu sooritamiseks.",
+                    "name": "Seade"
+                },
+                "discharge_power": {
+                    "description": "T\u00fchjendusv\u00f5imsuse piirang (%).",
+                    "name": "T\u00fchjendusv\u00f5imsus"
+                },
+                "discharge_stop_soc": {
+                    "description": "L\u00f5peta t\u00fchjendamine antud laetuse juures (%).",
+                    "name": "T\u00fchjenduse l\u00f5pu SOC"
+                },
+                "period_1_enabled": {
+                    "description": "Luba ajaperiood 1.",
+                    "name": "Periood 1 lubatud"
+                },
+                "period_1_end": {
+                    "description": "1. perioodi l\u00f5puaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "1. perioodi l\u00f5pp"
+                },
+                "period_1_start": {
+                    "description": "1. perioodi algusaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "1. perioodi algus"
+                },
+                "period_2_enabled": {
+                    "description": "Luba ajaperiood 2.",
+                    "name": "Periood 2 lubatud"
+                },
+                "period_2_end": {
+                    "description": "2. perioodi l\u00f5puaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "2. perioodi l\u00f5pp"
+                },
+                "period_2_start": {
+                    "description": "2. perioodi algusaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "2. perioodi algus"
+                },
+                "period_3_enabled": {
+                    "description": "Luba ajaperiood 3.",
+                    "name": "Periood 3 lubatud"
+                },
+                "period_3_end": {
+                    "description": "3. perioodi l\u00f5puaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "3. perioodi l\u00f5pp"
+                },
+                "period_3_start": {
+                    "description": "3. perioodi algusaeg (HH:MM v\u00f5i HH:MM:SS).",
+                    "name": "3. perioodi algus"
+                }
+            },
+            "name": "Kirjuta vahelduvvoolu t\u00fchjendusajad"
+        }
+    },
+    "title": "Growatt Server"
+}
